@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.TermsandCondition_Activity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/ree">
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/backbtn"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_arrow_back_black_24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terms and Conditions"
+            android:layout_marginTop="5dp"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/xxs"
+            android:textColor="@color/appTextColor"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/petitamedium"
+            />
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ree">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:textColor="@color/appTextColor"
+        android:fontFamily="@font/petitamedium"
+        android:text="Digiaccountz is committed to protecting your privacy and this privacy statement describes in greater detail the privacy practices of Digiaccountz. \n
+Personal Information “means any such information that helps to identify or could be used to identify you. Examples of personal information includes, Postal and Email Address, name, business name, contact number etc  \n \n
+General \n \nReview these Terms of Service ('Agreement') thoroughly. This Agreement is a legal agreement between the User and Digiaccountz. By accepting electronically (for example, clicking “I Agree”), installing, accessing or using the Services, User agrees to these terms. If the User does not agree to this Agreement, then he/she may not use the Services. This License Agreement shall be governed by and construed in accordance with the laws of the Pakistan. \n
+The Application is intended for users who re at least 18 years old. Persons under the age of 13 are not permitted to register for the Application. \n
+We use cookies on our Platform. Where such cookies are not strictly necessary for the utilization of the Platform and services rendered thereon, we will ask you to consent to our use of cookies when you first visit our Platform. \n
+We may process data about your use of the Platform/application (“Usage Data”). Usage Data may include your IP address, geographical location, browser type and version, operating system, referral source, length of visit, page views and website navigation paths, as well as information about the timing, frequency and pattern of your service use. The source of the Usage Data is our analytics tracking system. Usage Data may be processed for the purposes of analyzing the use of the Platform/application. The legal basis for this processing is your consent hereunder and our legitimate interests, namely monitoring and improving the Platform/application and content and user experience we provide therewith. \n
+We may process data associated with your User account (“Account Data”). The Account Data may include your name and email address. The source of the Account Data is, generally, you. The Account Data may be processed for the purposes of operating the Platform/application, providing our services, ensuring the security of the Platform and services, maintaining back-ups of our databases, and communicating with you. The legal basis for this processing is your consent hereunder and our legitimate interests, namely the proper administration of our Platform/application and business. \n
+From time to time, we may use user information for new uses which were not previously disclosed in our privacy policy. \n \n
+Modification of terms and conditions \n \nThese terms may be updated from time to time in the future. The User should agree to review our Terms and Conditions regularly by visiting this page. Continued access to or use of the service will mean that the User agrees to the change. \n. \n
+When This Privacy Statement Applies \n \n
+Its liability to User is limited to those who have downloaded the Cashify application from Google Play or website of Digiaccountz by clicking on to the “Sign-up/I Agree/Login” button for Terms and Conditions. \n \n
+Description of Services \n \n
+We provide an array of services including Credit register, Sales and purchase register, Inventory management, Invoicing, Reporting tool, Estimate/Order Form creator and so on to serve as a complete business management Software ('Service' or 'Services'). The User may use the Services for his/her personal and business use. The User may download the application from Official website/ Google Play Store using the Internet. Digiaccountz tries its best to ensure that Businesses are compliant to the relevant applicable laws as much as possible. But, it is solely the User’s responsibility to see to that he/she remains compliant with laws levied by Government. Digiaccountz is not in any case responsible with the violation of the compliance caused by software. \n \n
+Business Data and Privacy \n \n
+The User alone is responsible for maintaining the confidentiality of his/her username, password and other sensitive information. He/She is responsible for all activities that occur in his/her user account and he/she agrees to inform us immediately of any unauthorized use of their user account by email to digit.0786@gmail.com or by calling us on any of the numbers listed on our website. We are not responsible for any loss or damage to his/her or to any third party incurred as a result of any unauthorized access and/or use of his/her user account, or otherwise. We are neither responsible for any kind of data loss as performing necessary backups on data is solely the User’s responsibility.  \n
+Digiaccountz is not responsible for any kind of data discrepancy or any type of loss occurred due to data discrepancy/software issue.  \n
+By using the application, your represent and warrant that: 1) all registration information you submit will be true, accurate, current and complete, 2) you will maintain the accuracy of such information and promptly update such registration information as necessary, 3) you have the legal capacity and you agree to comply with these terms of use, 4) you are not under the age of 13, 5) not a minor in the jurisdiction in which you reside, or if a minor, you the received the parental permission to use the application, 6) you will not access the application through automated or non human means, whether through a bot, script or otherwise, 7) you will not use the application for any illegal or unauthorized purpose, and 8) your use of application will not violate applicable law or regulations. If your provide the information that is untrue, inaccurate, not current or incomplete we have the right to suspend or terminate your account and refuse any or all current or future use of applications \n
+You may be required to register with the application. You agree to keep your password confidential and will be responsible for all use of your account and password. We reserve the right to remove, reclaim, or change a username you select if we determine, in our sole discretion, that such username is inappropriate, obscene or otherwise objectionable. \n
+It is Digiaccountz practice to secure all our tool that collects personal information; however, the confidentiality of personal information transmitted over the Internet cannot be guaranteed. We urge you to be careful when transmitting personal information over the Internet. Digiaccountz cannot guarantee that unauthorized third parties will not gain access to your personal information, therefore, when submitting personal information to Digiaccountz mobile app, you must analyze risks and benefits. In addition, Digiaccountz app covered by this Privacy Policy will display a warning whenever you link to a web site that is not controlled by Digiaccountz; you should check the privacy policies of such third-party web sites before submitting personal information. \n \n
+Data Ownership \n \n
+The User owns the content created or stored by him/her as we respect his/her right to ownership of content created or stored by them. The User’s use of the Services does grant Digiaccountz the license to use, reproduce, adapt, modify, publish or distribute the content created by them or stored in the user’s account for Digiaccountz internal purpose. Digiaccountz tries keeping Users data safe but holds zero responsibility in case of data leaks. \n \n
+Corrections \n \n
+There may be information on the Digiaccountz application that contains typographical errors, inaccuracies, or omissions that may relate to the application, including descriptions, pricing, availability, and various other information. We reserve the right to correct any errors, inaccuracies, or omissions and to change or update the information on the Application at any time, without prior notice. \n \n
+Disclaimer \n \n
+The application is provided on an AS-IS and As-Available basis. You agree that your use of the application service will be at your sole risk. To the fullest extent permitted by law, we disclaim all warranties, express or implied, in connection with the application and your use thereof, including, without limitation the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. We make no warranties or representations about the accuracy or completeness of the application’s content and we will assume no liability or responsibility for any 1) errors, mistakes, or inaccuracies of content and materials, 2) personal injury or property damage, of any nature whatsoever resulting from your access to and use of the application, 3) Any unauthorized access to or use of our secure servers and/or any and all personal information and/or financial information stored therein, 4) Any interruption or cessation of transmission to or from the applications, 5) Any bugs, viruses, trojan horses, or the like which may be transmitted to or through the application by any third party, and/or, 6)  any errors or omissions in any content and materials or for any loss or damage of any kind incurred as a result of use of any content posted, transmitted, or otherwise made available via the application. We do not warrant, endorse, guarantee or assume responsibility for any product or service advertised or offered by a third party through the application, any hyperlinked website, or any website or mobile application featured in any banner or other advertising, and we will not be a party to or in any way be responsible for monitoring any transaction between you and any third party providers of products or services. As with the purchase of a product or service through any medium or in any environment, you should use your best judgement and exercise caution were appropriate \n \n
+Permissions: Digiaccountz applications will need the following permissions \n \n
+Camera: To take the picture of the bills etc to be attached with transactions. \n
+Contacts: To autofill the details during party creation. \n
+Storage: To store reports, PDF, Excels generated by users and access user selected images to attach with bills \n
+Location: To customize the apps according to your region. \n \n
+Approval of Alerts, Messages and Promotional campaign \n \n
+In addition to the General Conditions of Digiaccountz a User agrees to be bound by the following terms and conditions: \n (i) The User agrees to receive promotional, transactional and commercial communications from Digiaccountz  through calls, email, SMS or push notifications. \n (ii) Under certain conditions, promotional messages are transmitted to the users and that Digiaccountz shall not bear any further obligation in respect of such promotional messages. \n \n
+Cancellation/Refund Policy: \n \n
+1. If the user is not satisfied with the product or service and want to discontinue, they are advised to delete the app and stop using the app.  \n  2. The user may inform Digiaccountz of his intention to stop using the applications by sending an email. \n \n
+END OF TERMS OF SERVICE \n
+If you have any questions or concerns regarding this Agreement, please contact us at digit.0786@gmail.com"
+        />
+
+    </ScrollView>
+
+</RelativeLayout>

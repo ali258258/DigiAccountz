@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.signups.LanguageSelectionActivity"
+    android:weightSum="2"
+    android:orientation="vertical">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="0.9"
+    android:background="@color/screenbackgroundsBlue"
+    >
+
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:text="Welcome"
+        android:letterSpacing="0.25"
+        android:layout_marginRight="10dp"
+        android:id="@+id/welcomeheading"
+        android:fontFamily="@font/petitamedium"
+        android:textSize="26dp"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:text="to"
+        android:letterSpacing="0.25"
+        android:layout_below="@id/welcomeheading"
+        android:layout_marginRight="10dp"
+        android:id="@+id/toheading"
+        android:fontFamily="@font/petitamedium"
+        android:textSize="26dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:text="Digi"
+        android:letterSpacing="0.25"
+        android:layout_marginRight="10dp"
+        android:textStyle="bold"
+        android:layout_below="@id/toheading"
+        android:id="@+id/digiheading"
+        android:fontFamily="@font/petitamedium"
+        android:textSize="27dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:text="Accountz"
+        android:layout_marginRight="10dp"
+        android:textStyle="bold"
+        android:layout_below="@id/digiheading"
+        android:id="@+id/accountzheading"
+        android:fontFamily="@font/petitamedium"
+        android:letterSpacing="0.25"
+        android:textSize="27dp"
+        />
+
+<ImageView
+    android:layout_width="110dp"
+    android:layout_height="110dp"
+   android:layout_marginTop="13dp"
+    android:src="@drawable/logosingle"
+    android:layout_toEndOf="@+id/digiheading"
+   />
+
+
+</RelativeLayout>
+
+</RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.1"
+        android:background="@color/screenbackgrounds"
+        >
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/langlay"
+    android:layout_centerHorizontal="true"
+    android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/appTextColor"
+            android:textSize="18dp"
+            android:layout_centerHorizontal="true"
+            android:text="Select your language"
+            android:layout_marginTop="20dp"
+            android:letterSpacing="0.10"
+            android:fontFamily="@font/petitamedium"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/appTextColor"
+            android:textSize="18dp"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:text="اپنی زبان کا انتخاب کریں"
+            android:layout_marginTop="10dp"
+            android:letterSpacing="0.10"
+            android:fontFamily="@font/petitamedium"/>
+
+</LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/langlay"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="40dp"
+                android:id="@+id/englishlangBtn"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/bluelanguagebtn"
+                android:layout_height="90dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/petitamedium"
+                    android:textStyle="bold"
+                    android:text="A"
+                    android:textColor="#fff"
+                    android:textSize="35dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="11dp"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ENGLISH"
+                    android:fontFamily="@font/petitamedium"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:id="@+id/englabel1"
+                    android:letterSpacing="0.25"
+                    android:textSize="22dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="22dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(English)"
+                    android:fontFamily="@font/petitamedium"
+                    android:textColor="#ffffff"
+                    android:layout_below="@+id/englabel1"
+                    android:letterSpacing="0.15"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="22dp"/>
+
+
+            </RelativeLayout>
+            
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="85dp"
+    android:weightSum="2"
+    android:layout_marginLeft="40dp"
+    android:layout_marginRight="40dp"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:id="@+id/urduromanbtn"
+        android:background="@drawable/urduroman"
+        android:layout_height="85dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/petitamedium"
+            android:textStyle="bold"
+            android:text="U"
+            android:textColor="@color/screenbackgroundsBlue"
+            android:textSize="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="11dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="URDU"
+            android:fontFamily="@font/petitamedium"
+            android:textColor="@color/screenbackgroundsBlue"
+            android:textStyle="bold"
+            android:id="@+id/urduromanlabel1"
+            android:letterSpacing="0.25"
+            android:textSize="18dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(Roman)"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/petitamedium"
+            android:textColor="@color/screenbackgroundsBlue"
+            android:layout_below="@+id/urduromanlabel1"
+            android:letterSpacing="0.15"
+            android:textSize="14dp"
+            android:layout_marginLeft="19dp"/>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:id="@+id/urdumainbtn"
+        android:background="@drawable/urduroman"
+        android:layout_height="85dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/petitamedium"
+            android:textStyle="bold"
+            android:text="اُ"
+            android:textColor="@color/screenbackgroundsBlue"
+            android:textSize="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="11dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="اُردُو"
+            android:fontFamily="@font/petitamedium"
+            android:textColor="@color/screenbackgroundsBlue"
+            android:textStyle="bold"
+            android:id="@+id/urdumainlabel1"
+            android:letterSpacing="0.35"
+            android:textSize="20dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(اردو)"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/petitamedium"
+            android:textColor="@color/screenbackgroundsBlue"
+            android:layout_below="@+id/urdumainlabel1"
+            android:letterSpacing="0.25"
+            android:textSize="15dp"
+            android:layout_marginLeft="18dp"/>
+
+
+    </RelativeLayout>
+
+
+
+
+
+</LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

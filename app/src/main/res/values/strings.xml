@@ -1,0 +1,133 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">Digi Accountz</string>
+    <string name="title_activity_home_with_drawer">HomeActivityWithDrawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="home_second">Home Second</string>
+
+
+    <!--   Add transaction locale below -->
+    <string name="amountinAT">Amount</string>
+    <string name="addamounthere">Add Amount Here</string>
+    <string name="additionaldetailsstr_inAt">Additional Details</string>
+    <string name="datestr_inAt">Date</string>
+    <string name="descstr_inAt">Description (Optional)</string>
+    <string name="adddescstr_iAt">Add Description Here</string>
+    <string name="imagestr_inAt">Image (Optional)</string>
+    <string name="attachfilestr_inAt">Attach file</string>
+    <string name="reminderstr_inAt">Reminder (Optional)</string>
+    <string name="transactiontypestr_inAt">Transaction Type</string>
+    <string name="selectonestr_inAt">Select one</string>
+    <string name="cashstr_inAt">Cash  </string>
+    <string name="bankmobilestr_inAt">Bank/Mobile  </string>
+    <string name="suppliesstr_inAt">Supplies  </string>
+    <string name="savestr_inAt">Save</string>
+
+
+    <!--    login Screen -->
+    <string name="signinstr_inLogin">Sign In</string>
+    <string name="signupstr_inLogin">Sign Up</string>
+    <string name="emailstr_inLogin">Email</string>
+    <string name="mobilenumberstr_inLogin">Mobile Number</string>
+    <string name="passwordstr_inLogin">Password</string>
+    <string name="forgetpasswordstr_inLogin">Forgot Password ?</string>
+    <string name="termsandconditionstr_inLogin">Terms and Conditions Apply.</string>
+
+    <!--    addmoniter screen-->
+    <string name="skipstr_inADM">Skip</string>
+    <string name="monitermoneystr_inADM">Monitor your money</string>
+    <string name="recieve_inADM">Receive PKR 5000 from John Doe </string>
+    <string name="pay_inADM">Pay PKR 2000 to John Doe</string>
+    <string name="next_inADM">Next</string>
+
+
+    <!--    addCustomer screen-->
+    <string name="skipstr_inAC">Skip</string>
+    <string name="addcustomerstr_inAC">Add customer/suppliers easily</string>
+    <string name="keepcustomer_inAC">Keep customers informed</string>
+    <string name="addreminders_inAC">Add reminders for payments</string>
+    <string name="next_inAC">Next</string>
+
+    <!--    Dotransaction screen-->
+    <string name="skipstr_inDT">Skip</string>
+    <string name="dotransaction_inDT">Do transactions on phone</string>
+    <string name="backup_inDT">Backup using your Gmail </string>
+    <string name="safesecure_inDT">Safe and secure with cloud back up</string>
+    <string name="next_inDT">Start</string>
+
+
+    <!--    verifyMobilenumber screen-->
+    <string name="verifyphonenumberstr_inVMN">Verify Phone Number</string>
+    <string name="termsandconditionstr_inVMN">Terms and Conditions Apply.</string>
+    <string name="verifystr_inVMN">VERIFY</string>
+
+    <!--    verifyMobilenumber screen-->
+    <string name="enterverificationcodestr_inCV">Enter Verification Code</string>
+    <string name="resendcodestr_inCV">Resend Code</string>
+    <string name="termsandconditionstr_inCV">Terms and Conditions Apply.</string>
+
+
+    <!--    emailsignup screen-->
+    <string name="fullnamestr_inESUP">Full Name</string>
+    <string name="emailstr_inESUP">Email (Optional)</string>
+    <string name="mobilenumberstr_inESUP">Mobile Number</string>
+    <string name="passwordstr_inESUP">Password</string>
+    <string name="confirmpasswordstr_inESUP">Confirm Password</string>
+    <string name="submitstr_inESUP">SUBMIT</string>
+
+
+    <!--    Create Business screen-->
+    <string name="businessnamestr_inCB">Business Name</string>
+    <string name="businesscurrencystr_inCB">Business Currency</string>
+    <string name="pleaseselectstr_inCB">Please Select</string>
+    <string name="startstr_inCB">START !</string>
+    <string name="termsandconditionstr_inCB">Terms and Conditions Apply.</string>
+
+
+    <!--    Home screen-->
+    <string name="homestr_inhome">Home</string>
+    <string name="reportsstr_inhome">Reports</string>
+    <string name="lastupdatedstr_inhome">Last Updated</string>
+
+
+    <!--    Drawer-->
+    <string name="profilestr_indrawer">Profile</string>
+    <string name="remindersstr_indrawer">Reminders</string>
+    <string name="morestr_indrawer">More</string>
+    <string name="settingsstr_indrawer">Settings</string>
+    <string name="languagestr_indrawer">Language</string>
+    <string name="logoutstr_indrawer">Logout</string>
+
+
+    <!--    reports screen-->
+    <string name="totalrecievedstr_inreports">Total Received</string>
+    <string name="totalgivenstr_inreports">Total Given</string>
+    <string name="balancestr_inreports">Balance</string>
+    <string name="searchherestr_inreports">Search here</string>
+    <string name="descriptionstr_inreports">Description</string>
+    <string name="datestr_inreports">Date</string>
+    <string name="amountstr_inreports">Amount</string>
+
+
+    <!--    Addcustomer screen-->
+    <string name="fullnamestr_inADDC">Full Name</string>
+    <string name="emailstr_inADDC">Email (Optional)</string>
+    <string name="mobilenumberstr_inADDC">Mobile Number</string>
+
+    <string name="addressstr_inADDC">Address (Optional)</string>
+    <string name="selectcatagorystr_inADDC">Select Catagory</string>
+    <string name="customerstr_inADDC">Customer</string>
+    <string name="supplierstr_inADDC">Supplier</string>
+    <string name="submitstr_inADDC">Next</string>
+
+
+</resources>

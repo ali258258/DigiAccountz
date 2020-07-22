@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screenbackgroundsBlue"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contacts"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/petitamedium"
+        android:textSize="24dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/cardviewlook"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="10dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/searchEt_contatcs"
+            android:layout_width="354dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/petitamedium"
+            android:hint="Search here."
+            android:paddingLeft="30dp" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:visibility="visible"
+            android:layout_centerVertical="true"
+            android:id="@+id/ssa"
+            android:src="@drawable/searchcus"/>
+
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:visibility="gone"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/ssaa"
+            android:src="@drawable/filterum"/>
+
+    </RelativeLayout>
+
+
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:id="@+id/mylistview"
+        android:divider="@null"
+        android:layout_height="300dp"/>
+
+</LinearLayout>
+
+</LinearLayout>

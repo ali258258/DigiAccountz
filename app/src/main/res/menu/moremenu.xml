@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/applock_menu"
+        app:showAsAction="never"
+        android:title="App Lock">
+    </item>
+
+    <item
+        android:id="@+id/applang_menu"
+        app:showAsAction="never"
+        android:title="App Language">
+    </item>
+
+    <item
+        android:id="@+id/cloudbackup_menu"
+        app:showAsAction="never"
+        android:title="Cloud Backup">
+    </item>
+
+    <item
+        android:id="@+id/connectwithdrive_menu"
+        app:showAsAction="never"
+        android:title="Connect with Drive">
+    </item>
+    <item
+        android:id="@+id/howtouseapp_menu"
+        app:showAsAction="never"
+        android:title="How yo use App">
+    </item>
+    <item
+        android:id="@+id/shareapp_menu"
+        app:showAsAction="never"
+        android:title="Share App">
+    </item>
+
+
+</menu>

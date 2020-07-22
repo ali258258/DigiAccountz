@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/drawer"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Activities.busineses.DrawerTest"
+    app:content="@layout/drawermenutest"
+    >
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:foreground="?android:attr/windowContentOverlay"
+        app:theme="@style/Base_ToolbarTheme"/>
+
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:textColor="@color/appTextColor"-->
+<!--        android:text="sdsssdsdsd"/>-->
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_marginTop="50dp"
+      android:background="#ffffff"
+      android:tag="@string/tag_menu"/>
+
+
+</nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout>

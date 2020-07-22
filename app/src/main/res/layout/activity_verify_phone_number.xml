@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:focusable="false"
+    tools:context=".Activities.signups.VerifyPhone_numberActivity"
+    android:background="@color/screenbackgroundsBlue"
+    android:weightSum="2"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/toplay"
+        android:layout_weight="0.6"
+        android:background="@color/screenbackgroundsBlue"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/logoslider"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@drawable/cardviewlook"
+            android:orientation="vertical"
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/verifyphonenumberstr_inVMN"
+                android:textColor="@color/appTextColor"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/petitamedium"/>
+
+
+            <ImageView
+                android:layout_marginTop="30dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/verifyicon"/>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:paddingLeft="12dp"
+        android:layout_height="wrap_content"
+        android:text="PK (+92)"
+        android:textColor="@color/appTextColor"
+        android:textSize="18dp"
+        android:fontFamily="@font/petitamedium"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:id="@+id/phone">
+
+            <EditText
+         android:layout_width="match_parent"
+                android:inputType="number"
+                android:layout_weight="1.6"
+                android:maxLength="10"
+                android:layout_toLeftOf="@+id/verifyBtn"
+                android:id="@+id/numberEt_inverify"
+                android:layout_gravity="left"
+          android:layout_height="45dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_weight="0.4"
+                    android:layout_height="wrap_content"
+                    android:text="@string/verifystr_inVMN"
+                    android:id="@+id/verifyBtn"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="5dp"
+                    android:paddingLeft="8dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/screenbackgroundsBlue"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/petitamedium"
+                    tools:ignore="RtlCompat" />
+
+
+</RelativeLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="or"
+                android:visibility="gone"
+                android:layout_marginTop="30dp"
+                android:textStyle="bold"
+                android:textColor="@color/appTextColor"
+                android:textSize="20dp"
+                android:fontFamily="@font/petitamedium"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Signup with Email"
+                android:layout_marginTop="30dp"
+                android:id="@+id/signinwithemailBtn"
+                android:visibility="gone"
+                android:textStyle="bold"
+                android:textColor="@color/screenbackgroundsBlue"
+                android:textSize="20dp"
+                android:fontFamily="@font/petitamedium"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/termsandconditionstr_inVMN"
+            android:textColor="@color/appTextColor"
+            android:textSize="16dp"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="@font/petitamedium"/>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

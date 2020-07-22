@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:weightSum="3.3"
+        android:id="@+id/ss1"
+        android:layout_marginLeft="5dp"
+        android:layoutDirection="ltr"
+        android:gravity="center_vertical"
+        android:layout_marginRight="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Sent"
+            android:singleLine="true"
+            android:layout_weight="1.5"
+            android:textStyle="bold"
+            android:id="@+id/descTv_"
+            android:layout_marginLeft="3dp"
+            android:textColor="@color/appTextColor"
+            android:textSize="16dp"
+            android:fontFamily="@font/petitamedium"/>
+
+
+
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Sent"
+            android:singleLine="true"
+            android:layout_weight="0.7"
+            android:id="@+id/dateTv"
+            android:layout_marginLeft="3dp"
+            android:textColor="@color/appTextColor"
+            android:textSize="16dp"
+            android:fontFamily="@font/petitamedium"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Sent"
+            android:singleLine="true"
+            android:textAlignment="textEnd"
+            android:paddingRight="6dp"
+            android:layout_weight="0.8"
+            android:textStyle="bold"
+            android:id="@+id/amountTv"
+            android:layout_marginLeft="3dp"
+            android:textColor="@color/appTextColor"
+            android:textSize="16dp"
+            android:fontFamily="@font/petitamedium"/>
+
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:id="@+id/overflowbtn"
+            android:layout_gravity="center"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_more_vert_black_24dp"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recieved"
+        android:singleLine="true"
+        android:layout_weight="1.6"
+        android:textStyle="bold"
+        android:layout_marginLeft="8dp"
+        android:layout_below="@+id/ss1"
+        android:id="@+id/statusTv"
+        android:textColor="@color/appTextColor"
+        android:textSize="15dp"
+        android:fontFamily="@font/petitamedium"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sent"
+        android:singleLine="true"
+        android:layout_weight="1"
+        android:layout_below="@+id/statusTv"
+        android:layout_marginTop="5dp"
+        android:id="@+id/typeTv"
+        android:layout_marginLeft="9dp"
+        android:textColor="@color/appTextColor"
+        android:textSize="14dp"
+        android:fontFamily="@font/petitamedium"/>
+
+
+</RelativeLayout>

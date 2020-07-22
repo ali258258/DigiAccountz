@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="false"
+    android:focusableInTouchMode="true"
+    android:background="#ffffff"
+    tools:context=".Activities.busineses.BusinessListActivity">
+
+    <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbarme"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fff"
+        android:theme="@style/Base_ToolbarThemeMe">
+
+        <!-- your custom layout -->
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbarme"
+        android:paddingBottom="50dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="#1A0066ff"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You Will Recieve"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:textColor="@color/appTextColor"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/petitamedium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:id="@+id/totalrecieved_inbusinesslist"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/petitamedium"
+                    android:text="Rs 1200"
+                    android:textColor="@color/screenbackgroundsBlue"
+                    android:textSize="17dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You Will Give"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:textColor="@color/appTextColor"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/petitamedium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs 1200"
+                    android:id="@+id/totalgiven_inbusinesslist"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/appTextColorPurple"
+                    android:textSize="17dp"
+                    android:fontFamily="@font/petitamedium"/>
+
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/balancestr_inreports"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:textColor="@color/appTextColor"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/petitamedium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs 1,42,000"
+                    android:layout_marginLeft="3dp"
+                    android:id="@+id/balance_inbusinesslist"
+                    android:textStyle="bold"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/appTextColor"
+                    android:textSize="19dp"
+                    android:fontFamily="@font/petitamedium"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="10dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/searchEt_reports"
+                android:layout_width="354dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:fontFamily="@font/petitamedium"
+                android:hint="Search here."
+                android:paddingLeft="30dp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30dp"
+                android:visibility="visible"
+                android:layout_centerVertical="true"
+                android:id="@+id/ssa"
+                android:src="@drawable/searchcus"/>
+
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_height="22dp"
+                android:visibility="gone"
+                android:layout_marginRight="20dp"
+                android:layout_centerVertical="true"
+                android:id="@+id/ssaa"
+                android:src="@drawable/filterum"/>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:weightSum="3"
+            android:visibility="gone"
+            android:layoutDirection="ltr"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/descriptionstr_inreports"
+                android:singleLine="true"
+                android:layout_weight="1"
+                android:textAlignment="viewStart"
+                android:layout_marginLeft="3dp"
+                android:textColor="@color/appTextColor"
+                android:textSize="19dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/petitamedium"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/datestr_inreports"
+                android:singleLine="true"
+                android:layout_weight="1"
+                android:textAlignment="viewStart"
+                android:layout_marginLeft="3dp"
+                android:textColor="@color/appTextColor"
+                android:textSize="19dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/petitamedium"/>
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/amountstr_inreports"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:layout_marginLeft="3dp"
+                android:textColor="@color/appTextColor"
+                android:textSize="19dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/petitamedium"/>
+
+
+
+        </LinearLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:id="@+id/mylistview"
+            android:divider="@null"
+            android:layout_height="match_parent"/>
+
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/bottomm"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:background="@drawable/addbackhome">
+
+
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingRight="30dp"
+            android:id="@+id/tohommeLv"
+            android:gravity="bottom|center_horizontal"
+            android:paddingBottom="2dp"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/home_home"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/homestr_inhome"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:textColor="@color/screenbackgroundsBlue"
+                android:fontFamily="@font/petitamedium"/>
+
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="30dp"
+            android:id="@+id/reportsBtn"
+            android:gravity="bottom|center_horizontal"
+            android:paddingBottom="2dp"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/reportshomeselected"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reportsstr_inhome"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:textColor="@color/appTextColor"
+                android:fontFamily="@font/petitamedium"/>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="70dp"
+        android:id="@+id/addBtn"
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/addhome"/>
+
+
+
+
+
+
+
+
+</RelativeLayout>

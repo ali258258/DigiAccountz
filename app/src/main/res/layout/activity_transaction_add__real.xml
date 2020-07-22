@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:focusable="false"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".Activities.busineses.TransactionAdd_RealActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/backbtn"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_arrow_back_black_24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Customer Name Here"
+            android:layout_centerInParent="true"
+            android:id="@+id/cnhTv"
+            android:textColor="@color/appTextColor"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/petitamedium"
+            />
+
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/amountinAT"
+                android:layout_marginLeft="3dp"
+                android:textColor="@color/appTextColor"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/petitamedium"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/amountEt_inAT"
+                android:inputType="number"
+                android:fontFamily="@font/petitamedium"
+                android:hint="@string/addamounthere"/>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/transactiontypestr_inAt"
+                android:layout_marginLeft="3dp"
+                android:textColor="@color/appTextColor"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/petitamedium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/selectonestr_inAt"
+                android:layout_marginLeft="3dp"
+                android:textColor="#CDCBCB"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/petitamedium"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_weight="1">
+
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/cashCB_inAT"
+                        android:src="@drawable/lineborder"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cashstr_inAt"
+                        android:id="@+id/cashCBTvv_inAT"
+
+                        android:textColor="@color/appTextColor"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/petitamedium"/>
+
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1">
+
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:id="@+id/bankonlineCB_inAT"
+                        android:layout_height="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="left|center_vertical"
+                        android:src="@drawable/lineborder"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bankmobilestr_inAt"
+                        android:id="@+id/bankonlineTv_inAT"
+                        android:textColor="@color/appTextColor"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/petitamedium"/>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1">
+
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:id="@+id/suppliesCB_inAT"
+                        android:layout_height="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/lineborder"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/suppliesstr_inAt"
+                        android:id="@+id/suppliesTv_inAT"
+                        android:textColor="@color/appTextColor"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/petitamedium"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/additionaldetailsstr_inAt"
+            android:layout_marginLeft="3dp"
+            android:textColor="@color/appTextColor"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:letterSpacing="0.1"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:fontFamily="@font/petitamedium"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/datestr_inAt"
+                android:layout_marginLeft="3dp"
+                android:textColor="@color/appTextColor"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/petitamedium"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dateEt_inAT"
+                android:clickable="true"
+                android:editable="false"
+                android:fontFamily="@font/petitamedium"
+                android:hint="8/05/2020"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/descstr_inAt"
+                android:layout_marginLeft="3dp"
+                android:textColor="@color/appTextColor"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/petitamedium"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:lines="5"
+                android:minLines="5"
+                android:id="@+id/descEt_inAT"
+                android:inputType="textMultiLine"
+                android:fontFamily="@font/petitamedium"
+                android:hint="@string/adddescstr_iAt"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:id="@+id/imagelinear"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/imagestr_inAt"
+                android:layout_marginLeft="3dp"
+                android:textColor="@color/appTextColor"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/petitamedium"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageEt_inAT"
+                android:paddingRight="20dp"
+                android:clickable="true"
+                android:editable="false"
+                android:drawableRight="@drawable/ic_attachment_black_24dp"
+                android:fontFamily="@font/petitamedium"
+                android:hint="@string/attachfilestr_inAt"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:id="@+id/reminderlinear"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reminderstr_inAt"
+                android:layout_marginLeft="3dp"
+                android:textColor="@color/appTextColor"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/petitamedium"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/reminderEt_inAT"
+                android:fontFamily="@font/petitamedium"
+                android:hint="@string/reminderstr_inAt"/>
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/petitamedium"
+            android:textStyle="bold"
+            android:id="@+id/saveBtn"
+            android:text="@string/savestr_inAt"
+            android:textColor="#ffffff"
+            android:background="@drawable/bluelanguagebtn"
+            />
+
+
+
+    </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

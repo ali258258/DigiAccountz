@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:layout_marginTop="10dp"
+        android:paddingRight="30dp"
+        android:paddingLeft="30dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:layout_centerInParent="true"
+            android:id="@+id/nameEt_inR"
+            android:textColor="@color/appTextColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/petitamedium"
+            />
+
+        <TextView
+            android:layout_weight="0.9"
+            android:layout_width="0dp"
+            android:textAlignment="center"
+            android:id="@+id/dateEt_inR"
+            android:layout_height="wrap_content"
+            android:text="@string/datestr_inAt"
+            android:layout_centerInParent="true"
+            android:textColor="@color/appTextColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/petitamedium"
+            />
+
+        <TextView
+            android:layout_weight="1"
+            android:textAlignment="textEnd"
+            android:layout_width="0dp"
+            android:id="@+id/timeEt_inR"
+            android:paddingRight="10dp"
+            android:layout_height="wrap_content"
+            android:text="Time"
+            android:layout_centerInParent="true"
+            android:textColor="@color/appTextColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/petitamedium"
+            />
+
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="0.2"
+            android:id="@+id/overflowbtn"
+            android:layout_gravity="right"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_more_vert_black_24dp"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

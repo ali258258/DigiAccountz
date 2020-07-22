@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusableInTouchMode="true"
+    android:focusable="false"
+    android:background="@color/screenbackgroundsBlue"
+    tools:context=".Activities.LoginActivity">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/toplay"
+        android:layout_weight="0.7"
+        android:background="@color/screenbackgroundsBlue"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lgoinlogin"
+            android:layout_centerInParent="true"
+            android:src="@drawable/logoslider"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signupstr_inLogin"
+            android:layout_marginLeft="3dp"
+            android:layout_below="@+id/lgoinlogin"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:id="@+id/signup_inlogin"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/petitamedium"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:background="@drawable/cardviewlook"
+        android:layout_weight="1.3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+
+                android:orientation="vertical"
+                >
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mobilenumberstr_inADDC"
+                        android:layout_marginLeft="3dp"
+                        android:textColor="@color/appTextColor"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/petitamedium"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/emailEtlogin"
+                        android:inputType="number"
+                        android:textSize="16dp"
+                        android:maxLength="12"
+                        android:hint="923331234567"/>
+
+                </LinearLayout>
+
+
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/passwordstr_inLogin"
+                        android:layout_marginLeft="3dp"
+                        android:textColor="@color/appTextColor"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/petitamedium"/>
+
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/passwordEtlogin"
+                        android:textSize="16dp"
+                        android:inputType="numberPassword"
+                        android:hint="xxxxxxxxxx"/>
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/forgetpasswordstr_inLogin"
+                    android:textAlignment="textEnd"
+                    android:layout_marginTop="10dp"
+                    android:paddingRight="5dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="3dp"
+                    android:textColor="@color/appTextColor"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/petitamedium"/>
+
+
+
+
+
+
+            </LinearLayout>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="@font/petitamedium"
+            android:textStyle="bold"
+            android:id="@+id/signinBtn"
+            android:text="@string/signinstr_inLogin"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="5dp"
+            android:layout_above="@+id/sdds"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/bluelanguagebtn"
+           />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/sdds"
+            android:layout_centerHorizontal="true"
+            android:text="@string/termsandconditionstr_inLogin"
+            android:textColor="@color/appTextColor"
+            android:textSize="18dp"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="@font/petitamedium"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

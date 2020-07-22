@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:focusable="false"
+    android:focusableInTouchMode="true"
+    android:layout_height="match_parent"
+    tools:context=".Activities.customers.CustomerListActivity">
+
+    <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbarme"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fff"
+        android:theme="@style/Base_ToolbarThemeMe">
+
+        <!-- your custom layout -->
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/bot"
+    android:layout_below="@+id/toolbarme"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#1A0066ff"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You will Give"
+                android:layout_marginLeft="3dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="@color/appTextColor"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/petitamedium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="3dp"
+                android:id="@+id/c_youwillgetTvv"
+                android:fontFamily="@font/petitamedium"
+                android:text="Rs 1200"
+                android:textColor="@color/appTextColorPurple"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You will Receive"
+                android:layout_marginLeft="3dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="@color/appTextColor"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/petitamedium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rs 1200"
+                android:layout_marginLeft="3dp"
+                android:id="@+id/c_youwillgiveTvv"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/screenbackgroundsBlue"
+                android:textSize="16dp"
+                android:fontFamily="@font/petitamedium"/>
+
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Balance"
+                android:layout_marginLeft="3dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="@color/appTextColor"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/petitamedium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rs 1,42,000"
+                android:id="@+id/c_balanceeTvv"
+                android:layout_marginLeft="3dp"
+                android:textStyle="bold"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/appTextColor"
+                android:textSize="18dp"
+                android:fontFamily="@font/petitamedium"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:visibility="invisible"
+            android:layout_centerVertical="true"
+            android:id="@+id/ssa"
+            android:src="@drawable/searchcus"/>
+        
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:visibility="invisible"
+            android:hint="Search here"
+            android:layout_toLeftOf="@id/ssaa"
+            android:layout_toRightOf="@+id/ssa"/>
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/ssaa"
+            android:src="@drawable/filterum"/>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:weightSum="3"
+        android:layoutDirection="ltr"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:singleLine="true"
+            android:layout_weight="1.2"
+            android:layout_marginLeft="3dp"
+            android:textColor="@color/appTextColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/petitamedium"/>
+
+
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Reminder"
+            android:singleLine="true"
+            android:layout_weight="1"
+            android:layout_marginLeft="3dp"
+            android:textColor="@color/appTextColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/petitamedium"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Amount"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:layout_weight="0.7"
+            android:layout_marginLeft="3dp"
+            android:textColor="@color/appTextColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/petitamedium"/>
+
+
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:id="@+id/mylistview"
+        android:layout_height="match_parent"/>
+
+
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:weightSum="2"
+        android:gravity="center_vertical"
+        android:id="@+id/bot"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_weight="1"
+            android:textSize="12dp"
+            android:fontFamily="@font/petitamedium"
+            android:textStyle="bold"
+            android:text="You Receive"
+            android:id="@+id/youwillreceiveBtn"
+            android:textColor="#ffffff"
+            android:background="@drawable/givenewww"
+           />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="40dp"
+            android:layout_weight="1"
+            android:textSize="12dp"
+            android:fontFamily="@font/petitamedium"
+            android:textStyle="bold"
+            android:text="You Gave"
+            android:id="@+id/youwillgiveBtn"
+            android:textColor="#ffffff"
+            android:background="@drawable/receivenewww"
+            />
+
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

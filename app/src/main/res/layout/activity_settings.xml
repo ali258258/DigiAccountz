@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/screenbackgroundsBlue"
+    tools:context=".Activities.SettingsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/toplay"
+        android:layout_weight="0.6"
+        android:background="@color/screenbackgroundsBlue"
+        >
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/backbtn"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/ic_arrow_back_white_24dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lgoinlogin"
+            android:layout_centerInParent="true"
+            android:src="@drawable/logoslider"/>
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/cardviewlook"
+        android:layout_weight="1.4">
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="@font/petitamedium"
+            android:textStyle="bold"
+            android:id="@+id/applockbtn"
+            android:text="Applock"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="5dp"
+            android:layout_above="@+id/sdds"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/bluelanguagebtn"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="@font/petitamedium"
+            android:textStyle="bold"
+            android:id="@+id/langBtn"
+            android:text="Language"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="5dp"
+            android:layout_above="@+id/sdds"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/bluelanguagebtn"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="@font/petitamedium"
+            android:textStyle="bold"
+            android:text="Create Backup"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="5dp"
+            android:layout_above="@+id/sdds"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/bluelanguagebtn"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="@font/petitamedium"
+            android:textStyle="bold"
+            android:text="Restore Backup"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="5dp"
+            android:layout_above="@+id/sdds"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/bluelanguagebtn"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="@font/petitamedium"
+            android:textStyle="bold"
+            android:text="Share App"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="5dp"
+            android:layout_above="@+id/sdds"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/bluelanguagebtn"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

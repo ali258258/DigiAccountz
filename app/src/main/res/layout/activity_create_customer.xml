@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="false"
+    android:focusableInTouchMode="true"
+    android:background="#ffffff"
+    android:gravity="center"
+    tools:context=".Activities.customers.CreateCustomerActivity">
+
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/backbtn"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/ic_arrow_back_black_24dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_above="@+id/submittBtn"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/contactmv"
+            android:src="@drawable/ic_contact_phone_black_24dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:fontFamily="@font/petitamedium"
+            android:text="@string/fullnamestr_inADDC"
+            android:textColor="@color/appTextColor"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17dp"
+            android:id="@+id/nameEt_increatecustomer"
+            android:inputType="text"
+            android:hint="John Doe."/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/emailstr_inADDC"
+            android:layout_marginLeft="3dp"
+            android:textColor="@color/appTextColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/petitamedium"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17dp"
+            android:id="@+id/emmailEt_increatecustomer"
+            android:inputType="textEmailAddress"
+            android:hint="John@digiaccountz.com"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mobilenumberstr_inADDC"
+            android:layout_marginLeft="3dp"
+            android:textColor="@color/appTextColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/petitamedium"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17dp"
+            android:maxLength="15"
+            android:id="@+id/mobileEt_increatecustomer"
+            android:inputType="number"
+            android:hint="92XXXXXXXXXX"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/addressstr_inADDC"
+            android:layout_marginLeft="3dp"
+            android:textColor="@color/appTextColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/petitamedium"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:textSize="17dp"
+            android:id="@+id/AdressEt_increatecustomer"
+            android:inputType="text"
+            android:hint="House no/3324"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Catagory"
+            android:layout_marginLeft="3dp"
+            android:textColor="@color/appTextColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/petitamedium"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:id="@+id/customerCh"
+                    android:src="@color/screenbackgroundsBlue"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/customerstr_inADDC"
+                    android:id="@+id/customerTvv"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/appTextColor"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/petitamedium"/>
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
+
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:id="@+id/supplierCH"
+                    android:layout_height="10dp"
+
+                    android:src="@drawable/lineborder"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/supplierstr_inADDC"
+                    android:id="@+id/supplierTvv"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/appTextColor"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/petitamedium"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
+
+
+    <Button
+        android:id="@+id/submittBtn"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bluelanguagebtn"
+        android:fontFamily="@font/petitamedium"
+        android:text="@string/submitstr_inADDC"
+        android:textColor="#ffffff" />
+
+
+</RelativeLayout>

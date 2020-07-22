@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_homep"
+            android:title="@string/profilestr_indrawer" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:title="@string/remindersstr_indrawer" />
+
+        <item
+            android:id="@+id/nav_downloads"
+            android:title="Downloads" />
+
+
+        <!--        <item-->
+        <!--            android:id="@+id/nav_settinngs_me"-->
+        <!--            android:title="@string/settingsstr_indrawer" />-->
+        <item
+            android:id="@+id/nav_logout_me"
+            android:title="@string/logoutstr_indrawer" />
+
+        <item
+            android:id="@+id/nav_slideshow"
+            android:title="Terms and Conditions" />
+
+    </group>
+</menu>

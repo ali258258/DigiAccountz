@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Digi Accountz</string>
+
+
+<!--   Add transaction locale below -->
+    <string name="amountinAT">رقم</string>
+    <string name="addamounthere">یہاں رقم لکھیں</string>
+    <string name="additionaldetailsstr_inAt">اضافی تفصیلات</string>
+    <string name="datestr_inAt">تاریخ</string>
+    <string name="descstr_inAt">تفصیل (غیر ضروری)</string>
+    <string name="adddescstr_iAt">یہاں تفصیل لکھیں</string>
+    <string name="imagestr_inAt">تصویر (غیر ضروری)</string>
+    <string name="attachfilestr_inAt">فائل منسلک کریں</string>
+    <string name="reminderstr_inAt">یاد دہانی (غیر ضروری)</string>
+    <string name="transactiontypestr_inAt">لین دین کی قسم</string>
+    <string name="selectonestr_inAt">ایک کا انتخاب کریں</string>
+    <string name="cashstr_inAt">نقد</string>
+    <string name="bankmobilestr_inAt">بینک/موبائل</string>
+    <string name="suppliesstr_inAt">مال/سامان دیا</string>
+    <string name="savestr_inAt">محفوظ کریں</string>
+
+
+<!--    login-->
+    <string name="signinstr_inLogin">سائن ان</string>
+    <string name="signupstr_inLogin">سائن اپ</string>
+    <string name="emailstr_inLogin">ای میل</string>
+    <string name="mobilenumberstr_inLogin">فون نمبر</string>
+    <string name="passwordstr_inLogin">پاس ورڈ</string>
+    <string name="forgetpasswordstr_inLogin">پاسورڈ بھول گے ؟</string>
+    <string name="termsandconditionstr_inLogin">شرائط و ضوابط لاگو  ہیں۔۔</string>
+
+    <!--    addmoniter screen-->
+    <string name="skipstr_inADM">اگلا صفحہ</string>
+    <string name="monitermoneystr_inADM">اپنے پیسوں کا حساب کتاب رکھیں</string>
+    <string name="recieve_inADM">خریدار سے 5000 روپے وصول کریں</string>
+    <string name="pay_inADM">دکاندار کو 2000 روپے دیں</string>
+    <string name="next_inADM">اگلا صفحہ</string>
+
+
+    <!--    addCustomer screen-->
+    <string name="skipstr_inAC">اگلا صفحہ</string>
+    <string name="addcustomerstr_inAC">آسانی سے گاہک / دکاندار شامل کریں</string>
+    <string name="keepcustomer_inAC">گاھک کو آگاہ رکھیں</string>
+    <string name="addreminders_inAC">ادائیگیوں کے لئے یاد دہانیاں شامل کریں</string>
+    <string name="next_inAC">اگلا صفحہ</string>
+
+    <!--    Dotransaction screen-->
+    <string name="skipstr_inDT">اگلا صفحہ</string>
+    <string name="dotransaction_inDT">فون پر لین دین کریں</string>
+    <string name="backup_inDT"> اپنے Gmail کا استعمال کرتے ہوئے بیک اپ</string>
+    <string name="safesecure_inDT">کلاؤڈ بیک اپ کے ساتھ محفوظ اور محفوظ تر</string>
+    <string name="next_inDT">شروع کریں</string>
+
+
+    <!--    verifyMobilenumber screen-->
+    <string name="verifyphonenumberstr_inVMN">موبائل نمبر کی تصدیق کریں</string>
+    <string name="termsandconditionstr_inVMN">شرائط و ضوابط لاگو ہیں۔</string>
+    <string name="verifystr_inVMN">تصدیق کریں</string>
+
+
+    <!--    verifyMobilenumber screen-->
+    <string name="enterverificationcodestr_inCV">تصدیقی کوڈ درج کریں</string>
+    <string name="resendcodestr_inCV">کوڈ پھر سے بھیجیں</string>
+    <string name="termsandconditionstr_inCV">شرائط و ضوابط لاگو ہیں۔</string>
+
+
+    <!--    emailsignup screen-->
+    <string name="fullnamestr_inESUP">پورا نام</string>
+    <string name="emailstr_inESUP">ای میل  (غیر ضروری)</string>
+    <string name="mobilenumberstr_inESUP">موبائل نمبر</string>
+    <string name="passwordstr_inESUP">پاس ورڈ</string>
+    <string name="confirmpasswordstr_inESUP">پاس ورڈ کی تصدیق کریں</string>
+    <string name="submitstr_inESUP">جمع کرائیں</string>
+
+
+    <!--    Create Business screen-->
+    <string name="businessnamestr_inCB">کاروبار کا نام</string>
+    <string name="businesscurrencystr_inCB">کاروباری کرنسی</string>
+    <string name="pleaseselectstr_inCB">براہ مہربانی منتخب کریں</string>
+    <string name="startstr_inCB">شروع کریں !</string>
+    <string name="termsandconditionstr_inCB">شرائط و ضوابط لاگو ہیں</string>
+
+
+    <!--    Home screen-->
+    <string name="homestr_inhome">ھوم</string>
+    <string name="reportsstr_inhome">میزان</string>
+    <string name="lastupdatedstr_inhome">آخری اندراج کی تاریخ</string>
+
+
+    <!--    Drawer-->
+    <string name="profilestr_indrawer">پروفائل</string>
+    <string name="remindersstr_indrawer">یاددہانی</string>
+    <string name="morestr_indrawer">مزید</string>
+    <string name="settingsstr_indrawer">ترتیبات</string>
+    <string name="logoutstr_indrawer">لاگ آوٹ</string>
+
+
+
+
+    <!--    reports screen-->
+    <string name="totalrecievedstr_inreports">وصول ہوے</string>
+    <string name="totalgivenstr_inreports">دیئے گئے</string>
+    <string name="balancestr_inreports">بقایا</string>
+    <string name="searchherestr_inreports">تلاش کری</string>
+    <string name="descriptionstr_inreports">تفصیل</string>
+    <string name="datestr_inreports">تاریخ</string>
+    <string name="amountstr_inreports">رقم</string>
+    <string name="languagestr_indrawer">زبان کا انتخاب کریں</string>
+
+
+    <!--    Addcustomer screen-->
+    <string name="fullnamestr_inADDC">پورا نام</string>
+    <string name="emailstr_inADDC">ای میل (غیرضروری)</string>
+    <string name="mobilenumberstr_inADDC">موبائل نمبر</string>
+    <string name="addressstr_inADDC">پتہ (غیرضروری)</string>
+    <string name="selectcatagorystr_inADDC">زمرہ منتخب کریں</string>
+    <string name="customerstr_inADDC">گاھک/خریدار</string>
+    <string name="supplierstr_inADDC">سپلائر/دکاندار</string>
+    <string name="submitstr_inADDC">آگے چلیں</string>
+
+
+
+</resources>
