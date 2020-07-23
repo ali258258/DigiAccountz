@@ -172,7 +172,7 @@
                     android:id="@+id/englabel1"
                     android:letterSpacing="0.25"
                     android:textSize="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="18dp"
                     android:layout_marginLeft="22dp"/>
 
                 <TextView
@@ -193,6 +193,7 @@
     android:layout_width="match_parent"
     android:layout_height="85dp"
     android:weightSum="2"
+    android:visibility="gone"
     android:layout_marginLeft="40dp"
     android:layout_marginRight="40dp"
     android:orientation="horizontal">
@@ -301,6 +302,30 @@
 
 
 </LinearLayout>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="40dp"
+                android:id="@+id/elanguagedropdown"
+                android:layout_marginRight="40dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:background="@drawable/dropdown_box"
+                android:layout_height="90dp">
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/mylanggspin"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
 
 
         </LinearLayout>

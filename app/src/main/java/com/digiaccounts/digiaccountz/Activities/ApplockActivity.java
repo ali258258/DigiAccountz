@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.digiaccounts.digiaccountz.Activities.busineses.HomeActivityWithDrawer;
 import com.digiaccounts.digiaccountz.R;
 import com.digiaccounts.digiaccountz.roomdatabase.tables.SigninWithemailTable;
 import com.digiaccounts.digiaccountz.roomdatabase.tables.loginmanage.LoginManageTable;
@@ -58,5 +60,24 @@ public class ApplockActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+      //  super.onBackPressed();
+        Toast.makeText(this, "Password Required.", Toast.LENGTH_SHORT).show();
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

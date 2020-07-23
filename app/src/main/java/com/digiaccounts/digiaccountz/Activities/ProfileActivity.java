@@ -20,6 +20,7 @@ import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.KeyListener;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +29,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.digiaccounts.digiaccountz.Activities.busineses.BusinessListActivity;
 import com.digiaccounts.digiaccountz.Activities.busineses.HomeActivityWithDrawer;
 import com.digiaccounts.digiaccountz.Activities.busineses.ui.home.CustomerListBean;
 import com.digiaccounts.digiaccountz.Activities.busineses.ui.home.HomeFragment;
@@ -35,7 +37,10 @@ import com.digiaccounts.digiaccountz.R;
 import com.digiaccounts.digiaccountz.roomdatabase.tables.SigninWithemailTable;
 
 public class ProfileActivity extends AppCompatActivity{
-
+    //back
+    //attachment icon
+    //email puri in profile
+    // alarm reset save in database.
 
     int PRIVATE_MODE = 0;
     String PREF_NAME = "digiaccountz";
@@ -162,5 +167,27 @@ public class ProfileActivity extends AppCompatActivity{
         }
 
     }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        HomeActivityWithDrawer.ff = 0;
+        finish();
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 
 }

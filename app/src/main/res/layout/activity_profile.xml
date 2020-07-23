@@ -68,7 +68,6 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="50dp"
             android:textSize="18dp"
-            android:maxLength="12"
             android:hint="umarumar@gmail.com"/>
 
     </LinearLayout>

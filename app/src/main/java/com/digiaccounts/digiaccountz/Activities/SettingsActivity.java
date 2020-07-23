@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,6 +16,8 @@ import android.widget.ListView;
 
 import com.digiaccounts.digiaccountz.Activities.busineses.BusinessListActivity;
 import com.digiaccounts.digiaccountz.Activities.busineses.HomeActivityWithDrawer;
+import com.digiaccounts.digiaccountz.Activities.customers.CustomerListActivity;
+import com.digiaccounts.digiaccountz.Activities.customers.CustomerUpdateActivity;
 import com.digiaccounts.digiaccountz.Activities.signups.LanguageSelectionActivity;
 import com.digiaccounts.digiaccountz.R;
 import com.digiaccounts.digiaccountz.roomdatabase.tables.customer.CustomerTable;
@@ -150,6 +153,26 @@ public class SettingsActivity extends AppCompatActivity {
 
         }
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        HomeActivityWithDrawer.ff = 0;
+        finish();
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }

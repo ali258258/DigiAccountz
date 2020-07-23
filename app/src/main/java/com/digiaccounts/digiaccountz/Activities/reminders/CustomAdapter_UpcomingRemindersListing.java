@@ -27,6 +27,8 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.digiaccounts.digiaccountz.Activities.MainActivity;
+import com.digiaccounts.digiaccountz.Activities.callbacks.CreateTransactionCallback;
+import com.digiaccounts.digiaccountz.Activities.callbacks.ReminderUpdateCallback;
 import com.digiaccounts.digiaccountz.Activities.customers.customerDetailsBean;
 import com.digiaccounts.digiaccountz.R;
 import com.digiaccounts.digiaccountz.roomdatabase.tables.business.BusinessTable;
@@ -44,7 +46,7 @@ import java.util.Date;
 import java.util.TimeZone;
 
 public class CustomAdapter_UpcomingRemindersListing extends BaseAdapter {
-
+   static ReminderUpdateCallback listener;
 
     Context context;
     private ReminderTable[] list;
@@ -224,6 +226,8 @@ public class CustomAdapter_UpcomingRemindersListing extends BaseAdapter {
 
         MainActivity.database.RemiderManageTable().UpdateRemiderDateTime(transid,dateString,timestring);
 
+        listener.Callon();
+
     }
 
 
@@ -278,5 +282,8 @@ public class CustomAdapter_UpcomingRemindersListing extends BaseAdapter {
         popup.show();
     }
 
+    public static void setListenerCallback(ReminderUpdateCallback callbacks){
+        listener = callbacks;
+    }
 
 }

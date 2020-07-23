@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -22,6 +23,7 @@ import com.digiaccounts.digiaccountz.Activities.TermsandCondition_Activity;
 import com.digiaccounts.digiaccountz.Activities.busineses.HomeActivityWithDrawer;
 import com.digiaccounts.digiaccountz.Activities.busineses.TransactionAdd_RealActivity;
 import com.digiaccounts.digiaccountz.Activities.busineses.ui.home.HomeFragment;
+import com.digiaccounts.digiaccountz.Activities.callbacks.ReminderUpdateCallback;
 import com.digiaccounts.digiaccountz.R;
 import com.digiaccounts.digiaccountz.roomdatabase.MyDatabase;
 import com.digiaccounts.digiaccountz.roomdatabase.tables.business.BusinessTable;
@@ -33,7 +35,7 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class UpComingRemindersActivity extends AppCompatActivity {
+public class UpComingRemindersActivity extends AppCompatActivity implements ReminderUpdateCallback {
 
     ImageView backbtn;
     TextView businessname;
@@ -59,6 +61,7 @@ public class UpComingRemindersActivity extends AppCompatActivity {
 
         database = Room.databaseBuilder(getApplicationContext(),MyDatabase.class,"mydatabasee").allowMainThreadQueries().build();
 
+        CustomAdapter_UpcomingRemindersListing.setListenerCallback(this);
 
         businessidStr = getIntent().getStringExtra("businessidd");
         businessnameStr = getIntent().getStringExtra("businessname");
@@ -140,4 +143,35 @@ public class UpComingRemindersActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        HomeActivityWithDrawer.ff = 0;
+        finish();
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public static void changess(){
+
+    }
+
+    @Override
+    public void Callon() {
+     ReminderTable[] list = database.RemiderManageTable().loadAllRemindersByBusinessID(Long.parseLong(businessidStr));
+     BusinessTable bs = database.businessManageTable().loadWithID(Long.parseLong(businessidStr));
+     adap = new CustomAdapter_UpcomingRemindersListing(UpComingRemindersActivity.this,list);
+     lv.setAdapter(adap);
+    }
 }

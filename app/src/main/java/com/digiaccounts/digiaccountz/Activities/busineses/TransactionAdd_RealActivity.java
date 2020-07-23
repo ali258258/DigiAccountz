@@ -28,6 +28,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Base64;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -321,6 +322,7 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
         imageEt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ff=0;
                 imageselectionDailog();
             }
         });
@@ -395,6 +397,7 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (!amountEt.getText().toString().equalsIgnoreCase("")
                 && !dateEt.getText().toString().equalsIgnoreCase(""))
                 {
@@ -402,6 +405,7 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
                     if (!catagory.equalsIgnoreCase("")) {
                         try
                         {
+                        CustomerListActivity.ff=0;
                         TransactionTable ob = new TransactionTable();
                         ob.setAmount(amountEt.getText().toString());
                         ob.setDate(dateEt.getText().toString());
@@ -509,23 +513,6 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
 
     }
 
-
-
-    public void changeLocale(Context context, Locale locale) {
-        Configuration conf = context.getResources().getConfiguration();
-        conf.locale = locale;
-        Locale.setDefault(locale);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            conf.setLayoutDirection(conf.locale);
-        }
-
-        context.getResources().updateConfiguration(conf, context.getResources().getDisplayMetrics());
-        String url = context.getResources().getString(R.string.amountinAT);
-        Toast.makeText(context, ": "+url, Toast.LENGTH_SHORT).show();
-        TransactionAdd_RealActivity.this.recreate();
-    }
-
     public static void setListenerCallback(CreateTransactionCallback callbacks){
         listener = callbacks;
     }
@@ -550,7 +537,7 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
                         imageEt.setEnabled(false);
 
                         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                        bitmap.compress(Bitmap.CompressFormat.JPEG, 50, baos);
                        // bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos); // bm is the bitmap object
                         byte[] b = baos.toByteArray();
 
@@ -577,7 +564,7 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
                         imageEt.setEnabled(false);
 
                         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                        bitmap.compress(Bitmap.CompressFormat.JPEG, 50, baos);
                       //  bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos); // bm is the bitmap object
                         byte[] b = baos.toByteArray();
 
@@ -797,6 +784,26 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
         return image;
     }
 
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        CustomerListActivity.ff=0;
+        finish();
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
 
 }

@@ -6,7 +6,9 @@ import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,18 +21,28 @@ import com.digiaccounts.digiaccountz.Activities.languagemanage.LanguageManager;
 import com.digiaccounts.digiaccountz.R;
 import com.digiaccounts.digiaccountz.roomdatabase.tables.SigninWithemailTable;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
 public class LanguageSelectionActivity extends AppCompatActivity {
 
    RelativeLayout englishlangBtn,urduroman,urdumain;
    String cont = "";
+    Spinner spin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_language_selection);
+        spin = findViewById(R.id.mylanggspin);
+        englishlangBtn = findViewById(R.id.englishlangBtn);
+        urdumain = findViewById(R.id.urdumainbtn);
+        urduroman = findViewById(R.id.urduromanbtn);
 
-
+        // balance not showing properly total diffrent.
+        // blue hat toh you will recieve , puple py you will pay replace on balance title in  customerListtransaction.
+//        applock on createcustomer save button
+//        picture rotating on customer transaction list
+//        multithreading on contacts.
 
         if (getIntent().getStringExtra("zxcv") != null && getIntent().getStringExtra("zxcv").equalsIgnoreCase("homee")){
             cont = getIntent().getStringExtra("zxcv");
@@ -46,11 +58,14 @@ public class LanguageSelectionActivity extends AppCompatActivity {
 
         // end here
 
+        ArrayList<String> languages = new ArrayList<String>();
+        languages.add("Please Select Your Language");
+        languages.add("Urdu (Roman)");
+        languages.add("Urdu (اردو)");
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.customspinn,languages);
+        spin.setAdapter(adapter);
 
 
-        englishlangBtn = findViewById(R.id.englishlangBtn);
-        urdumain = findViewById(R.id.urdumainbtn);
-        urduroman = findViewById(R.id.urduromanbtn);
 
         urduroman.setOnClickListener(new View.OnClickListener() {
             @Override
