@@ -83,7 +83,7 @@
             android:text="Name"
             android:layout_centerInParent="true"
             android:textColor="@color/appTextColor"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold"
             android:fontFamily="@font/petitamedium"
             />
@@ -96,7 +96,7 @@
             android:text="@string/datestr_inAt"
             android:layout_centerInParent="true"
             android:textColor="@color/appTextColor"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold"
             android:fontFamily="@font/petitamedium"
             />
@@ -109,7 +109,7 @@
             android:text="Time"
             android:layout_centerInParent="true"
             android:textColor="@color/appTextColor"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold"
             android:fontFamily="@font/petitamedium"
             />

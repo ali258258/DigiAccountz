@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import com.digiaccounts.digiaccountz.Activities.busineses.HomeActivityWithDrawer;
 import com.digiaccounts.digiaccountz.Activities.busineses.NewBusineses_Activity;
 import com.digiaccounts.digiaccountz.Activities.busineses.TransactionAdd_RealActivity;
+import com.digiaccounts.digiaccountz.Activities.customers.Contacts.ContactsLoad;
 import com.digiaccounts.digiaccountz.Activities.customers.CustomerUpdateActivity;
 import com.digiaccounts.digiaccountz.Activities.signups.LanguageSelectionActivity;
 import com.digiaccounts.digiaccountz.Activities.signups.MoniteryourMoney_Activity;
@@ -45,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences sharedPref= getSharedPreferences(PREF_NAME, PRIVATE_MODE);
         final String stringObject = sharedPref.getString("applockstatus","");
-
+        new MyContactTask().execute();
         final SigninWithemailTable list[] = MainActivity.database.signinDetails().loadAllUsers();
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -90,5 +92,21 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        }
 //    }
+
+    public class MyContactTask extends AsyncTask<String, Void, String> {
+
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            ContactsLoad.getContactList(MainActivity.this);
+            return "success";
+        }
+    }
+
 
 }

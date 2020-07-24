@@ -69,7 +69,7 @@ public class UpComingRemindersActivity extends AppCompatActivity implements Remi
 
         final ReminderTable[] list = database.RemiderManageTable().loadAllRemindersByBusinessID(Long.parseLong(businessidStr));
         final BusinessTable bs = database.businessManageTable().loadWithID(Long.parseLong(businessidStr));
-        adap = new CustomAdapter_UpcomingRemindersListing(this,list);
+        adap = new CustomAdapter_UpcomingRemindersListing(this,list,"show");
         lv.setAdapter(adap);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -171,7 +171,7 @@ public class UpComingRemindersActivity extends AppCompatActivity implements Remi
     public void Callon() {
      ReminderTable[] list = database.RemiderManageTable().loadAllRemindersByBusinessID(Long.parseLong(businessidStr));
      BusinessTable bs = database.businessManageTable().loadWithID(Long.parseLong(businessidStr));
-     adap = new CustomAdapter_UpcomingRemindersListing(UpComingRemindersActivity.this,list);
+     adap = new CustomAdapter_UpcomingRemindersListing(UpComingRemindersActivity.this,list,"show");
      lv.setAdapter(adap);
     }
 }

@@ -91,7 +91,7 @@ public class HomeFragment extends Fragment implements CreateCustomerCallbacks, C
         CreateCustomerActivity.setListenerCallback(this);
         TransactionAdd_RealActivity.setListenerCallbackforhome(this);
         CustomAdapter_customerListing.setListenerCallback2(this);
-        new MyContactTask().execute();
+
         final BusinessTable[] lisst = MainActivity.database.businessManageTable().loadAllBusiness();
         if (lisst != null && lisst.length > 0) {
             currentBusinessID = lisst[0].getId();
@@ -270,7 +270,7 @@ public class HomeFragment extends Fragment implements CreateCustomerCallbacks, C
     }
 
     @Override
-    public void Callon(int balance, int youwillgive, int youwillget) {
+    public void Callon(long balance, long youwillgive, long youwillget) {
 
         Clist.clear();
         CustomerTable customerList[] = MainActivity.database.customerManageTable().loadAllCustomersByBusinessID(currentBusinessID);
@@ -337,18 +337,4 @@ public class HomeFragment extends Fragment implements CreateCustomerCallbacks, C
 
     }
 
-    public class MyContactTask extends AsyncTask<String, Void, String> {
-
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-        }
-
-        @Override
-        protected String doInBackground(String... strings) {
-            ContactsLoad.getContactList(context);
-            return "success";
-        }
-    }
 }

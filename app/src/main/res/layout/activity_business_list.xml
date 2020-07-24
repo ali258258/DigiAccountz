@@ -37,6 +37,44 @@
             android:weightSum="3">
 
 
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You will Give"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:textColor="@color/appTextColor"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/petitamedium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs 1200"
+                    android:id="@+id/totalgiven_inbusinesslist"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/appTextColorPurple"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/petitamedium"/>
+
+
+
+
+            </LinearLayout>
+
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -47,11 +85,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="You Will Recieve"
+                    android:text="You will Recieve"
                     android:layout_marginLeft="3dp"
                     android:layout_marginBottom="3dp"
                     android:textColor="@color/appTextColor"
-                    android:textSize="18dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     android:fontFamily="@font/petitamedium"/>
 
@@ -64,43 +102,7 @@
                     android:fontFamily="@font/petitamedium"
                     android:text="Rs 1200"
                     android:textColor="@color/screenbackgroundsBlue"
-                    android:textSize="17dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="You Will Give"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginBottom="3dp"
-                    android:textColor="@color/appTextColor"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/petitamedium"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rs 1200"
-                    android:id="@+id/totalgiven_inbusinesslist"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginTop="3dp"
-                    android:textColor="@color/appTextColorPurple"
-                    android:textSize="17dp"
-                    android:fontFamily="@font/petitamedium"/>
-
-
-
+                    android:textSize="16dp"/>
 
             </LinearLayout>
 
@@ -118,10 +120,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/balancestr_inreports"
+                    android:id="@+id/balheading"
                     android:layout_marginLeft="3dp"
                     android:layout_marginBottom="3dp"
                     android:textColor="@color/appTextColor"
-                    android:textSize="18dp"
+                    android:textSize="17dp"
                     android:textStyle="bold"
                     android:fontFamily="@font/petitamedium"/>
 
@@ -134,7 +137,7 @@
                     android:textStyle="bold"
                     android:layout_marginTop="3dp"
                     android:textColor="@color/appTextColor"
-                    android:textSize="19dp"
+                    android:textSize="16dp"
                     android:fontFamily="@font/petitamedium"/>
 
             </LinearLayout>

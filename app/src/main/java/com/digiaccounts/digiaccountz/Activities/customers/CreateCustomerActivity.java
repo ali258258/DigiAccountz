@@ -100,8 +100,8 @@ public class CreateCustomerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
-
+                HomeActivityWithDrawer.ff = 0;
+                BusinessListActivity.ff = 0;
 
                 if (!nameEt.getText().toString().equalsIgnoreCase(""))
                 {
@@ -109,13 +109,11 @@ public class CreateCustomerActivity extends AppCompatActivity {
                     if (!mobilenumberEt.getText().toString().equalsIgnoreCase("")){
                         if(mobilenumberEt.getText().toString().contains("92") || mobilenumberEt.getText().toString().contains("03"))
                         {
-
                             Date c = Calendar.getInstance().getTime();
                             System.out.println("Current time => " + c);
 
                             SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
                             String formattedDate = df.format(c);
-
 
                             //  Toast.makeText(CreateCustomerActivity.this, ": "+HomeFragment.currentBusinessID, Toast.LENGTH_SHORT).show();
                             CustomerTable obb = new CustomerTable();

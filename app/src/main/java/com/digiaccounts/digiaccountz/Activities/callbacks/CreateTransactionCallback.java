@@ -5,6 +5,6 @@ import com.digiaccounts.digiaccountz.roomdatabase.tables.transactions.Transactio
 
 public interface CreateTransactionCallback {
 
-    public abstract void Callon(int balance, int youwillgive, int youwillget);
+    public abstract void Callon(long balance, long youwillgive, long youwillget);
 
 }

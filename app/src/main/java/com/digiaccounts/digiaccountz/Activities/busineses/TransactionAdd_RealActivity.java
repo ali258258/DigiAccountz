@@ -420,16 +420,16 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
                         transid = MainActivity.database.transactionManageTable().AddTransaction(ob);
 
                         CustomerTable t = MainActivity.database.customerManageTable().loadCustomerusingID(Long.parseLong(customerid));
-                        int c_balance = Integer.parseInt(t.getCustomer_balance());
-                        int c_youwillget = Integer.parseInt(t.getYouwillget_amount()); //recieved
-                        int c_youwillgive = Integer.parseInt(t.getYouwillgive_amount()); // sent
-                        int amt = Integer.parseInt(amountEt.getText().toString());
+                        long c_balance = Integer.parseInt(t.getCustomer_balance());
+                        long c_youwillget = Integer.parseInt(t.getYouwillget_amount()); //recieved
+                        long c_youwillgive = Integer.parseInt(t.getYouwillgive_amount()); // sent
+                        long amt = Integer.parseInt(amountEt.getText().toString());
 
 
                         BusinessTable b = MainActivity.database.businessManageTable().loadWithID(Long.parseLong(businessid));
-                        int b_balance = Integer.parseInt(b.getTotalamount());
-                        int b_youwillget = Integer.parseInt(b.getTotalrecieved()); //recieved
-                        int b_youwillgive = Integer.parseInt(b.getTotalgiven()); // sent
+                        long b_balance = Integer.parseInt(b.getTotalamount());
+                        long b_youwillget = Integer.parseInt(b.getTotalrecieved()); //recieved
+                        long b_youwillgive = Integer.parseInt(b.getTotalgiven()); // sent
 
                         if (statuss.equalsIgnoreCase("Sent")) {
                             c_balance = c_balance - amt;
@@ -447,14 +447,14 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
                         }
 
                         int dd = MainActivity.database.customerManageTable().UpdateAmountValues(Long.parseLong(customerid)
-                                , Integer.toString(c_balance)
-                                , Integer.toString(c_youwillget)
-                                , Integer.toString(c_youwillgive));
+                                , Long.toString(c_balance)
+                                , Long.toString(c_youwillget)
+                                , Long.toString(c_youwillgive));
 
                         int bb = MainActivity.database.businessManageTable().UpdateAmountValuesBusiness(Long.parseLong(businessid)
-                                , Integer.toString(b_balance)
-                                , Integer.toString(b_youwillget)
-                                , Integer.toString(b_youwillgive));
+                                , Long.toString(b_balance)
+                                , Long.toString(b_youwillget)
+                                , Long.toString(b_youwillgive));
 
                         listener.Callon(c_balance, c_youwillgive, c_youwillget);
                         listenerforhome.Callon(c_balance, c_youwillgive, c_youwillget);

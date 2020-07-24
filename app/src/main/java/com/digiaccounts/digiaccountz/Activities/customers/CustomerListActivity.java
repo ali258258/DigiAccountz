@@ -84,6 +84,8 @@ public class CustomerListActivity extends AppCompatActivity implements CreateTra
     String enddateStr="";
 
 
+    TextView balanceheading;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +98,7 @@ public class CustomerListActivity extends AppCompatActivity implements CreateTra
         giveTv= findViewById(R.id.c_youwillgiveTvv);
         balanceTv= findViewById(R.id.c_balanceeTvv);
         getTv= findViewById(R.id.c_youwillgetTvv);
+        balanceheading = findViewById(R.id.balanheading);
         youwillreceiveBtn = findViewById(R.id.youwillreceiveBtn);
         youwillgiveBtn = findViewById(R.id.youwillgiveBtn);
         filterMv = findViewById(R.id.ssaa);
@@ -122,9 +125,12 @@ public class CustomerListActivity extends AppCompatActivity implements CreateTra
 
         if (Integer.parseInt(youwillget)>=Integer.parseInt(youwillgive)){
             balanceTv.setTextColor(Color.parseColor("#ae09a5"));
+            balanceheading.setText("You will Pay");
         }
         else if (Integer.parseInt(youwillget)<Integer.parseInt(youwillgive)){
             balanceTv.setTextColor(Color.parseColor("#0066ff"));
+            balanceheading.setText("You will Receive");
+
         }
 
 
@@ -242,13 +248,15 @@ public class CustomerListActivity extends AppCompatActivity implements CreateTra
     }
 
     @Override
-    public void Callon(int balance, int youwillgive, int youwillget) {
+    public void Callon(long balance, long youwillgive, long youwillget) {
 
         if (youwillget>=youwillgive){
             balanceTv.setTextColor(Color.parseColor("#ae09a5"));
+            balanceheading.setText("You will Pay");
         }
         else if (youwillget<youwillgive){
             balanceTv.setTextColor(Color.parseColor("#0066ff"));
+            balanceheading.setText("You will Receive");
         }
 
         Tlist.clear();
@@ -283,9 +291,11 @@ public class CustomerListActivity extends AppCompatActivity implements CreateTra
 
         if (Integer.parseInt(recieve)>=Integer.parseInt(get)){
             balanceTv.setTextColor(Color.parseColor("#ae09a5"));
+            balanceheading.setText("You will Pay");
         }
         else if (Integer.parseInt(recieve)<Integer.parseInt(get)){
             balanceTv.setTextColor(Color.parseColor("#0066ff"));
+            balanceheading.setText("You will Receive");
         }
 
 

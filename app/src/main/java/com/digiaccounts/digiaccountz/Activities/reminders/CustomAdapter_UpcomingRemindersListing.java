@@ -63,11 +63,13 @@ public class CustomAdapter_UpcomingRemindersListing extends BaseAdapter {
     String dateString = "";
     long transid= 0;
 
+    String who ;
 
 
-    public CustomAdapter_UpcomingRemindersListing(Context c, ReminderTable[] l) {
+    public CustomAdapter_UpcomingRemindersListing(Context c, ReminderTable[] l,String whoo) {
         context = c;
         list=l;
+        who = whoo;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         date2 = new DatePickerDialog.OnDateSetListener() {
@@ -161,6 +163,10 @@ public class CustomAdapter_UpcomingRemindersListing extends BaseAdapter {
         name.setText(list[position].getCustomername());
         date.setText(list[position].getDate());
         time.setText(list[position].getTime());
+
+        if (who.equalsIgnoreCase("hide")){
+            overflow.setVisibility(View.GONE);
+        }
 
         overflow.setOnClickListener(new View.OnClickListener() {
             @Override

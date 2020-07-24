@@ -88,6 +88,7 @@ public class BusinessListActivity extends AppCompatActivity {
     String startdateStr="";
     String enddateStr="";
 
+    TextView balanceheading;
 
     LinearLayout homeLv;
     ListView lv;
@@ -116,6 +117,7 @@ public class BusinessListActivity extends AppCompatActivity {
 
         searchEt_reports = findViewById(R.id.searchEt_reports);
         addMv = findViewById(R.id.addBtn);
+        balanceheading= findViewById(R.id.balheading);
         lv = findViewById(R.id.mylistview);
         homeLv = findViewById(R.id.tohommeLv);
         filterMv = findViewById(R.id.ssaa);
@@ -129,16 +131,19 @@ public class BusinessListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        totalrecieved.setText(bt.getBusinesscurrency()+": "+bigDecimalData(bt.getTotalrecieved()));
-        totalgiven.setText(bt.getBusinesscurrency()+": "+bigDecimalData(bt.getTotalgiven()));
+        totalrecieved.setText(bt.getBusinesscurrency()+": "+bigDecimalData(bt.getTotalgiven()));
+        totalgiven.setText(bt.getBusinesscurrency()+": "+bigDecimalData(bt.getTotalrecieved()));
         balance.setText(bt.getBusinesscurrency()+": "+bigDecimalData(""+Math.abs(Integer.parseInt(bt.getTotalamount()))));
         businessid= getIntent().getStringExtra("businessidd");
 
         if (Integer.parseInt(bt.getTotalrecieved())>=Integer.parseInt(bt.getTotalgiven())){
-            balance.setTextColor(Color.parseColor("#0066ff"));
+            balance.setTextColor(Color.parseColor("#ae09a5"));
+            balanceheading.setText("You will Pay");
+
         }
         else if (Integer.parseInt(bt.getTotalrecieved())<Integer.parseInt(bt.getTotalgiven())){
-            balance.setTextColor(Color.parseColor("#ae09a5"));
+            balance.setTextColor(Color.parseColor("#0066ff"));
+            balanceheading.setText("You will Receive");
         }
 
         adap = new CustomAdapterforcustomerlist(this,Clist);

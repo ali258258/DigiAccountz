@@ -7,6 +7,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -14,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.digiaccounts.digiaccountz.Activities.MainActivity;
+import com.digiaccounts.digiaccountz.Activities.busineses.HomeActivityWithDrawer;
 import com.digiaccounts.digiaccountz.R;
 import com.digiaccounts.digiaccountz.roomdatabase.MyDatabase;
 import com.digiaccounts.digiaccountz.roomdatabase.tables.business.BusinessTable;
@@ -53,15 +55,15 @@ public class UpcomingActivityNotification extends AppCompatActivity {
 
         final ReminderTable[] list = database.RemiderManageTable().loadAllRemindersByBusinessID(Long.parseLong(businessidStr));
         final BusinessTable bs = database.businessManageTable().loadWithID(Long.parseLong(businessidStr));
-        adap = new CustomAdapter_UpcomingRemindersListing(this,list);
+        adap = new CustomAdapter_UpcomingRemindersListing(this,list,"hide");
         lv.setAdapter(adap);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                TransactionTable transaction = MainActivity.database.transactionManageTable().loadAllTransactionByTransactionID(list[position].getTransactionid());
-                CustomerTable cus = MainActivity.database.customerManageTable().loadCustomerusingID(transaction.getCustomerid());
+                TransactionTable transaction = database.transactionManageTable().loadAllTransactionByTransactionID(list[position].getTransactionid());
+                CustomerTable cus = database.customerManageTable().loadCustomerusingID(transaction.getCustomerid());
                 String textt = "";
 
                 if (cus.getCatagory().equalsIgnoreCase("customer")){
@@ -107,4 +109,25 @@ public class UpcomingActivityNotification extends AppCompatActivity {
         }
         return "";
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(UpcomingActivityNotification.this,MainActivity.class));
+        finish();
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 }
