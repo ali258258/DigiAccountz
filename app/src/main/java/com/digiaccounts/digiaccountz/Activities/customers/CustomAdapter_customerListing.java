@@ -13,6 +13,8 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Matrix;
+import android.media.ExifInterface;
 import android.os.Build;
 import android.text.TextPaint;
 import android.text.TextUtils;
@@ -479,7 +481,6 @@ public class CustomAdapter_customerListing extends BaseAdapter {
 
         dialog.show();
     }
-
 
 
 

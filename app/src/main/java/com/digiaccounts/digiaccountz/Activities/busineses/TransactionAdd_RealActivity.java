@@ -14,11 +14,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -520,6 +523,49 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
         listenerforhome = callbacks;
     }
 
+    public Bitmap AdjustRotation(String photoPath,Bitmap bitmap)
+    {
+        ExifInterface ei = null;
+        try {
+            ei = new ExifInterface(photoPath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        int orientation = ei.getAttributeInt(ExifInterface.TAG_ORIENTATION,
+                ExifInterface.ORIENTATION_UNDEFINED);
+
+        Bitmap rotatedBitmap = null;
+        switch(orientation) {
+
+            case ExifInterface.ORIENTATION_ROTATE_90:
+                rotatedBitmap = rotateImage(bitmap, 90);
+                break;
+
+            case ExifInterface.ORIENTATION_ROTATE_180:
+                rotatedBitmap = rotateImage(bitmap, 180);
+                break;
+
+            case ExifInterface.ORIENTATION_ROTATE_270:
+                rotatedBitmap = rotateImage(bitmap, 270);
+                break;
+
+            case ExifInterface.ORIENTATION_NORMAL:
+            default:
+                rotatedBitmap = bitmap;
+        }
+
+
+        return  rotatedBitmap;
+    }
+
+
+    public static Bitmap rotateImage(Bitmap source, float angle) {
+        Matrix matrix = new Matrix();
+        matrix.postRotate(angle);
+        return Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(),
+                matrix, true);
+    }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -556,6 +602,8 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
                      //   Uri extras = data.getData();
 
                         Bitmap bitmap = android.provider.MediaStore.Images.Media.getBitmap(getContentResolver(), currentPhotoURi);
+
+                        bitmap=AdjustRotation(getPath(TransactionAdd_RealActivity.this,currentPhotoURi),bitmap);
                         //  Bitmap bitmap = (Bitmap) extras.get("data");
                       //  Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), ex);
                         Drawable d = new BitmapDrawable(getResources(),  Bitmap.createScaledBitmap(bitmap, 50, 50, true));
@@ -580,7 +628,58 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
                 break;
         }
     }
+    public static String getPath(final Context context, final Uri uri) {
+        final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
+        Log.i("URI",uri+"");
+        String result = uri+"";
+        // DocumentProvider
+        //  if (isKitKat && DocumentsContract.isDocumentUri(context, uri)) {
+        if (isKitKat && (result.contains("media.documents"))) {
+            String[] ary = result.split("/");
+            int length = ary.length;
+            String imgary = ary[length-1];
+            final String[] dat = imgary.split("%3A");
+            final String docId = dat[1];
+            final String type = dat[0];
+            Uri contentUri = null;
+            if ("image".equals(type)) {
+                contentUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+            } else if ("video".equals(type)) {
+            } else if ("audio".equals(type)) {
+            }
+            final String selection = "_id=?";
+            final String[] selectionArgs = new String[] {
+                    dat[1]
+            };
+            return getDataColumn(context, contentUri, selection, selectionArgs);
+        } else if ("content".equalsIgnoreCase(uri.getScheme())) {
+            return getDataColumn(context, uri, null, null);
+        }
+        // File
+        else if ("file".equalsIgnoreCase(uri.getScheme())) {
+            return uri.getPath();
+        }
+        return null;
+    }
 
+    public static String getDataColumn(Context context, Uri uri, String selection, String[] selectionArgs) {
+        Cursor cursor = null;
+        final String column = "_data";
+        final String[] projection = {
+                column
+        };
+        try {
+            cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs, null);
+            if (cursor != null && cursor.moveToFirst()) {
+                final int column_index = cursor.getColumnIndexOrThrow(column);
+                return cursor.getString(column_index);
+            }
+        } finally {
+            if (cursor != null)
+                cursor.close();
+        }
+        return null;
+    }
 
     private void openTimePickerDialog(boolean is24r) {
 
