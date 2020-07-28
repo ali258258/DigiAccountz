@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.MenuInflater;
@@ -21,6 +22,7 @@ import com.digiaccounts.digiaccountz.Activities.ProfileActivity;
 import com.digiaccounts.digiaccountz.Activities.SettingsActivity;
 import com.digiaccounts.digiaccountz.Activities.TermsandCondition_Activity;
 import com.digiaccounts.digiaccountz.Activities.busineses.ui.home.HomeFragment;
+import com.digiaccounts.digiaccountz.Activities.customers.Contacts.ContactsLoad;
 import com.digiaccounts.digiaccountz.Activities.languagemanage.LanguageManager;
 import com.digiaccounts.digiaccountz.Activities.reminders.UpComingRemindersActivity;
 import com.digiaccounts.digiaccountz.Activities.signups.LanguageSelectionActivity;
@@ -46,6 +48,7 @@ public class HomeActivityWithDrawer extends AppCompatActivity {
     int PRIVATE_MODE = 0;
     String PREF_NAME = "digiaccountz";
 
+    public static  int condition = 0;
     private AppBarConfiguration mAppBarConfiguration;
     MenuItem itemm;
 
@@ -61,6 +64,8 @@ public class HomeActivityWithDrawer extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ff=0;
 
+    //    new MyContactTask().execute();
+
      //   ApplockHandling.homescreen = 0;
 
 
@@ -75,7 +80,7 @@ public class HomeActivityWithDrawer extends AppCompatActivity {
 //            }
 //        });
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        final DrawerLayout drawer = findViewById(R.id.drawer_layout);
         final NavigationView navigationView = findViewById(R.id.nav_view);
 //        navigationView.setBackgroundColor(Color.parseColor("#FFFFFF"));
         // Passing each menu ID as a set of Ids because each
@@ -99,17 +104,21 @@ public class HomeActivityWithDrawer extends AppCompatActivity {
                         finish();
                         return true;
                     case R.id.nav_homep:
+                        drawer.closeDrawers();
                         startActivity(new Intent(HomeActivityWithDrawer.this, ProfileActivity.class));
                         return true;
                     case R.id.nav_slideshow:
+                        drawer.closeDrawers();
                         startActivity(new Intent(HomeActivityWithDrawer.this, TermsandCondition_Activity.class));
                        // showPopupMenu(navigationView);
                         return true;
                     case R.id.nav_downloads:
+                        drawer.closeDrawers();
                         openFolder();
                         // showPopupMenu(navigationView);
                         return true;
                     case R.id.nav_gallery:
+                        drawer.closeDrawers();
                         Intent intent = new Intent(HomeActivityWithDrawer.this, UpComingRemindersActivity.class);
                         intent.putExtra("businessidd",""+HomeFragment.currentBusinessID);
                         intent.putExtra("businessname",""+ HomeFragment.currentBusinessName);
@@ -214,5 +223,21 @@ public class HomeActivityWithDrawer extends AppCompatActivity {
         }
 
         }
+
+//    public class MyContactTask extends AsyncTask<String, Void, String> {
+//
+//
+//        @Override
+//        protected void onPostExecute(String s) {
+//            super.onPostExecute(s);
+//        }
+//
+//        @Override
+//        protected String doInBackground(String... strings) {
+//            ContactsLoad.getContactList(HomeActivityWithDrawer.this);
+//            return "success";
+//        }
+//    }
+
 
 }

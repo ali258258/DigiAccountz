@@ -23,6 +23,8 @@ public interface CustomerTableDAO {
     @Query("SELECT * FROM customers_table WHERE id=:idd")
     public CustomerTable loadCustomerusingID(long idd);
 
+    @Query("DELETE FROM customers_table WHERE id = :Id")
+    public void deleteCustomerById(long Id);
 
     @Query("UPDATE customers_table SET customer_balance=:balance,youwillget_amount=:get,youwillgive_amount=:give WHERE id=:idd")
     public int UpdateAmountValues(long idd,String balance,String get,String give);

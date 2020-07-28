@@ -157,7 +157,7 @@ public class RemiderBroadcast extends BroadcastReceiver {
             calendar = Calendar.getInstance();
 
             calendar.setTime(date);
-            calendar.add(Calendar.MINUTE, 5);
+            calendar.add(Calendar.HOUR, 8);
 
             Log.i("55tggbfcd",sdf.format(calendar.getTime()));
         }

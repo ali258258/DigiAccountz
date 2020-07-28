@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.digiaccounts.digiaccountz.Activities.MainActivity;
 import com.digiaccounts.digiaccountz.Activities.busineses.HomeActivityWithDrawer;
+import com.digiaccounts.digiaccountz.Activities.callbacks.ReminderUpdateCallback;
 import com.digiaccounts.digiaccountz.R;
 import com.digiaccounts.digiaccountz.roomdatabase.MyDatabase;
 import com.digiaccounts.digiaccountz.roomdatabase.tables.business.BusinessTable;
@@ -26,7 +27,7 @@ import com.digiaccounts.digiaccountz.roomdatabase.tables.transactions.Transactio
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
-public class UpcomingActivityNotification extends AppCompatActivity {
+public class UpcomingActivityNotification extends AppCompatActivity implements ReminderUpdateCallback {
 
 
     ImageView backbtn;
@@ -48,7 +49,7 @@ public class UpcomingActivityNotification extends AppCompatActivity {
 
         database = Room.databaseBuilder(getApplicationContext(),MyDatabase.class,"mydatabasee").allowMainThreadQueries().build();
 
-
+        CustomAdapter_UpcomingRemindersListing.setListenerCallback2(this);
         businessidStr = getIntent().getStringExtra("businessidd");
         businessnameStr = getIntent().getStringExtra("businessname");
         businessname.setText("("+ businessnameStr +")");
@@ -67,12 +68,13 @@ public class UpcomingActivityNotification extends AppCompatActivity {
                 String textt = "";
 
                 if (cus.getCatagory().equalsIgnoreCase("customer")){
-                    textt= "Today you have to take “"+bs.getBusinesscurrency()+"."+bigDecimalData(transaction.getAmount())+"“ from "+list[position].getCustomername()+" ,which was given on "+transaction.getDate();
+                    textt= "Today you have to take "+bs.getBusinesscurrency()+" "+bigDecimalData(transaction.getAmount())+" from "+list[position].getCustomername()+", which was given on "+transaction.getDate();
 
                 }
                 else {
-                    textt= "Today you have to pay “"+bs.getBusinesscurrency()+"."+bigDecimalData(transaction.getAmount())+"“ to "+list[position].getCustomername()+" ,which was taken on "+transaction.getDate();
+                    textt= "Today you have to pay "+bs.getBusinesscurrency()+" "+bigDecimalData(transaction.getAmount())+" to "+list[position].getCustomername()+", which was taken on "+transaction.getDate();
                 }
+
 
                 remindernDailog(textt);
 
@@ -130,4 +132,11 @@ public class UpcomingActivityNotification extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void Callon() {
+        ReminderTable[] list = database.RemiderManageTable().loadAllRemindersByBusinessID(Long.parseLong(businessidStr));
+        BusinessTable bs = database.businessManageTable().loadWithID(Long.parseLong(businessidStr));
+        adap = new CustomAdapter_UpcomingRemindersListing(UpcomingActivityNotification.this,list,"show");
+        lv.setAdapter(adap);
+    }
 }

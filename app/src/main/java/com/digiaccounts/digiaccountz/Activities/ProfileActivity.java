@@ -46,8 +46,8 @@ public class ProfileActivity extends AppCompatActivity{
     String PREF_NAME = "digiaccountz";
 
     ImageView backbtn;
-    EditText nameet,passwordet;
-    TextView emailtv,mobilenotv;
+    EditText nameet,passwordet,emailtv;
+    TextView mobilenotv;
 
 
     String DISPLAY_NAME = ContactsContract.Contacts.DISPLAY_NAME;
@@ -79,6 +79,9 @@ public class ProfileActivity extends AppCompatActivity{
         nameet.setTag(nameet.getKeyListener());
         nameet.setKeyListener(null);
 
+        emailtv.setTag(emailtv.getKeyListener());
+        emailtv.setKeyListener(null);
+
         passwordet.setTag(passwordet.getKeyListener());
         passwordet.setKeyListener(null);
 
@@ -101,6 +104,9 @@ public class ProfileActivity extends AppCompatActivity{
                 if(event.getAction() == MotionEvent.ACTION_UP) {
                     if(event.getRawX() >= (nameet.getRight() - nameet.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
                         nameet.setKeyListener((KeyListener) nameet.getTag());
+                        nameet.setCursorVisible(true);
+                        nameet.requestFocus();
+                        nameet.setSelection(nameet.getText().length());
                         savebtn.setVisibility(View.VISIBLE);
                         return true;
                     }
@@ -108,6 +114,29 @@ public class ProfileActivity extends AppCompatActivity{
                 return false;
             }
         });
+
+        emailtv.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                final int DRAWABLE_LEFT = 0;
+                final int DRAWABLE_TOP = 1;
+                final int DRAWABLE_RIGHT = 2;
+                final int DRAWABLE_BOTTOM = 3;
+
+                if(event.getAction() == MotionEvent.ACTION_UP) {
+                    if(event.getRawX() >= (emailtv.getRight() - emailtv.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                        emailtv.setKeyListener((KeyListener) emailtv.getTag());
+                        emailtv.setCursorVisible(true);
+                        emailtv.requestFocus();
+                        emailtv.setSelection(emailtv.getText().length());
+                        savebtn.setVisibility(View.VISIBLE);
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
+
 
         passwordet.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -122,6 +151,9 @@ public class ProfileActivity extends AppCompatActivity{
                         passwordet.setKeyListener((KeyListener) passwordet.getTag());
                         savebtn.setVisibility(View.VISIBLE);
                         passwordet.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                        passwordet.setCursorVisible(true);
+                        passwordet.requestFocus();
+                        passwordet.setSelection(passwordet.getText().length());
                         return true;
                     }
                 }
@@ -135,7 +167,7 @@ public class ProfileActivity extends AppCompatActivity{
             public void onClick(View v) {
                 if (!nameet.getText().toString().equalsIgnoreCase("") && !passwordet.getText().toString().equalsIgnoreCase(""))
                 {
-                    MainActivity.database.signinDetails().UpdateUserInfo(ob.getId(),nameet.getText().toString(),passwordet.getText().toString());
+                    MainActivity.database.signinDetails().UpdateUserInfo(ob.getId(),nameet.getText().toString(),passwordet.getText().toString(),emailtv.getText().toString());
                     Toast.makeText(ProfileActivity.this, "Profile Updated", Toast.LENGTH_SHORT).show();
                     HomeActivityWithDrawer.ff = 0;
                     finish();

@@ -1,6 +1,8 @@
 package com.digiaccounts.digiaccountz.Activities.busineses.ui.home;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
@@ -31,6 +33,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.digiaccounts.digiaccountz.Activities.LoginActivity;
 import com.digiaccounts.digiaccountz.Activities.MainActivity;
 import com.digiaccounts.digiaccountz.Activities.busineses.BusinessListActivity;
+import com.digiaccounts.digiaccountz.Activities.busineses.HomeActivityWithDrawer;
 import com.digiaccounts.digiaccountz.Activities.busineses.NewBusineses_Activity;
 import com.digiaccounts.digiaccountz.Activities.busineses.TransactionAdd_RealActivity;
 import com.digiaccounts.digiaccountz.Activities.callbacks.CreateCustomerCallbacks;
@@ -107,6 +110,9 @@ public class HomeFragment extends Fragment implements CreateCustomerCallbacks, C
 
         adapterbusiness = new CustomAdapterfor_bussinessSpin(getActivity(), Blist);
         businessnameSpin.setAdapter(adapterbusiness);
+        if (HomeActivityWithDrawer.condition ==1) {
+            businessnameSpin.setSelection((Blist.size() - 2));
+        }
 
         CustomerTable customerList[] = MainActivity.database.customerManageTable().loadAllCustomersByBusinessID(currentBusinessID);
         for (int i = 0; i < customerList.length; i++) {
@@ -128,6 +134,15 @@ public class HomeFragment extends Fragment implements CreateCustomerCallbacks, C
         addMv = root.findViewById(R.id.addBtn);
         adap = new CustomAdapterforcustomerlist(getActivity(), Clist);
         lv.setAdapter(adap);
+
+        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
+                deletecustomerDailog(Long.parseLong(Clist.get(position).getCustomerid()),Long.parseLong(Clist.get(position).getBusinessid()));
+                return true;
+            }
+        });
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -316,6 +331,77 @@ public class HomeFragment extends Fragment implements CreateCustomerCallbacks, C
     @Override
     public void Changes(String recieve, String get, String balance) {
 
+        Clist.clear();
+        CustomerTable customerList[] = MainActivity.database.customerManageTable().loadAllCustomersByBusinessID(currentBusinessID);
+        for (int i = 0; i < customerList.length; i++) {
+            Log.i("12yygy6", ":" + customerList[i].getId());
+//           Clist.add(new CustomerListBean(customerList[i].getFullname(),"Last Updated: "+customerList[i].getDatetime(),customerList[i].getCustomer_balance(),Color.parseColor("#ae09a5"),String.valueOf(customerList[i].getId()),String.valueOf(customerList[i].getBusinessid())));
+            CustomerListBean ob = new CustomerListBean(customerList[i].getFullname() + " (" + customerList[i].getCatagory() + ")", "Last Updated: " + customerList[i].getDatetime(), customerList[i].getCustomer_balance(), Color.parseColor("#ae09a5"), String.valueOf(customerList[i].getId()), String.valueOf(customerList[i].getBusinessid()), customerList[i].getCatagory());
+            ob.setBalance(customerList[i].getCustomer_balance());
+            ob.setYouwillget(customerList[i].getYouwillget_amount());
+            ob.setYouwillgive(customerList[i].getYouwillgive_amount());
+            if (Integer.parseInt(customerList[i].getYouwillget_amount()) >= Integer.parseInt(customerList[i].getYouwillgive_amount())) {
+                ob.setColor(Color.parseColor("#ae09a5"));
+            } else if (Integer.parseInt((customerList[i].getYouwillget_amount())) < Integer.parseInt(customerList[i].getYouwillgive_amount())) {
+                ob.setColor(Color.parseColor("#0066ff"));
+            }
+            Clist.add(ob);
+        }
+        // Clist.add(new CustomerListBean(customerTable.getFullname(),"Last Updated: "+customerTable.getDatetime(),customerTable.getCustomer_balance(),Color.parseColor("#ae09a5"),String.valueOf(customerTable.getId()),String.valueOf(customerTable.getBusinessid())));
+        adap.notifyDataSetChanged();
+
+    }
+
+    public void deletecustomerDailog(final long customerid , final long businessid){
+
+        new AlertDialog.Builder(context)
+                .setTitle("Confirmation")
+                .setMessage("Do you want to delete this customer?")
+                .setPositiveButton("YES",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                customerdeletion(customerid,businessid);
+                            }
+                        })
+                .setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }).show();
+
+    }
+
+    public void customerdeletion(long customerid, long businessid){
+
+        CustomerTable t =MainActivity.database.customerManageTable().loadCustomerusingID(customerid);
+        long c_balance = Long.parseLong(t.getCustomer_balance());
+        long c_youwillget = Long.parseLong(t.getYouwillget_amount()); //recieved
+        long c_youwillgive = Long.parseLong(t.getYouwillgive_amount()); // sent
+
+        BusinessTable b =MainActivity.database.businessManageTable().loadWithID(businessid);
+        long b_balance = Long.parseLong(b.getTotalamount());
+        long b_youwillget = Long.parseLong(b.getTotalrecieved()); //recieved
+        long b_youwillgive = Long.parseLong(b.getTotalgiven()); // sent
+
+        b_balance = b_balance-c_balance;
+        b_youwillget = b_youwillget-c_youwillget;
+        b_youwillgive = b_youwillgive-c_youwillgive;
+
+
+        MainActivity.database.businessManageTable().UpdateAmountValuesBusiness(businessid,Long.toString(b_balance),Long.toString(b_youwillget),Long.toString(b_youwillgive));
+        MainActivity.database.customerManageTable().deleteCustomerById(customerid);
+        MainActivity.database.transactionManageTable().deleteTransactionBycustomerId(customerid);
+        MainActivity.database.RemiderManageTable().deleteRemindersbycustomerid(customerid);
+
+
+        NormalList();
+
+    }
+
+
+    public void NormalList(){
         Clist.clear();
         CustomerTable customerList[] = MainActivity.database.customerManageTable().loadAllCustomersByBusinessID(currentBusinessID);
         for (int i = 0; i < customerList.length; i++) {

@@ -87,6 +87,7 @@ public class NewBusineses_Activity extends AppCompatActivity {
                     MainActivity.database.businessManageTable().addBusiness(obb);
                     showname = busisnessnameEt.getText().toString();
                     startActivity(new Intent(NewBusineses_Activity.this,HomeActivityWithDrawer.class));
+                    HomeActivityWithDrawer.condition = 1;
                     finish();
                 }
                 else {

@@ -280,7 +280,7 @@ public class CustomerListActivity extends AppCompatActivity implements CreateTra
         }
         adap.notifyDataSetChanged();
     }
-c
+
 
     @Override
     public void Changes(String recieve, String get, String balance) {

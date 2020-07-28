@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences sharedPref= getSharedPreferences(PREF_NAME, PRIVATE_MODE);
         final String stringObject = sharedPref.getString("applockstatus","");
-        new MyContactTask().execute();
+
         final SigninWithemailTable list[] = MainActivity.database.signinDetails().loadAllUsers();
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -93,20 +93,6 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //    }
 
-    public class MyContactTask extends AsyncTask<String, Void, String> {
-
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-        }
-
-        @Override
-        protected String doInBackground(String... strings) {
-            ContactsLoad.getContactList(MainActivity.this);
-            return "success";
-        }
-    }
 
 
 }

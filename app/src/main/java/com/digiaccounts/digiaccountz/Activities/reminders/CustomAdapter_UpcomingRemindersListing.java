@@ -47,6 +47,7 @@ import java.util.TimeZone;
 
 public class CustomAdapter_UpcomingRemindersListing extends BaseAdapter {
    static ReminderUpdateCallback listener;
+   static ReminderUpdateCallback listener2;
 
     Context context;
     private ReminderTable[] list;
@@ -164,9 +165,9 @@ public class CustomAdapter_UpcomingRemindersListing extends BaseAdapter {
         date.setText(list[position].getDate());
         time.setText(list[position].getTime());
 
-        if (who.equalsIgnoreCase("hide")){
-            overflow.setVisibility(View.GONE);
-        }
+//        if (who.equalsIgnoreCase("hide")){
+//            overflow.setVisibility(View.GONE);
+//        }
 
         overflow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -232,8 +233,12 @@ public class CustomAdapter_UpcomingRemindersListing extends BaseAdapter {
 
         MainActivity.database.RemiderManageTable().UpdateRemiderDateTime(transid,dateString,timestring);
 
-        listener.Callon();
-
+        if (listener!=null) {
+            listener.Callon();
+        }
+        if (listener2!=null) {
+            listener2.Callon();
+        }
     }
 
 
@@ -290,6 +295,9 @@ public class CustomAdapter_UpcomingRemindersListing extends BaseAdapter {
 
     public static void setListenerCallback(ReminderUpdateCallback callbacks){
         listener = callbacks;
+    }
+    public static void setListenerCallback2(ReminderUpdateCallback callbacks){
+        listener2 = callbacks;
     }
 
 }

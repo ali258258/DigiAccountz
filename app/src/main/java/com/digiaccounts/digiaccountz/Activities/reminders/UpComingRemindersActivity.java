@@ -81,11 +81,11 @@ public class UpComingRemindersActivity extends AppCompatActivity implements Remi
                 String textt = "";
 
                 if (cus.getCatagory().equalsIgnoreCase("customer")){
-                    textt= "Today you have to take “"+bs.getBusinesscurrency()+"."+bigDecimalData(transaction.getAmount())+"“ from "+list[position].getCustomername()+" ,which was given on "+transaction.getDate();
+                    textt= "Today you have to take "+bs.getBusinesscurrency()+" "+bigDecimalData(transaction.getAmount())+" from "+list[position].getCustomername()+", which was given on "+transaction.getDate();
 
                 }
                 else {
-                    textt= "Today you have to pay “"+bs.getBusinesscurrency()+"."+bigDecimalData(transaction.getAmount())+"“ to "+list[position].getCustomername()+" ,which was taken on "+transaction.getDate();
+                    textt= "Today you have to pay "+bs.getBusinesscurrency()+" "+bigDecimalData(transaction.getAmount())+" to "+list[position].getCustomername()+", which was taken on "+transaction.getDate();
                 }
 
                 remindernDailog(textt);

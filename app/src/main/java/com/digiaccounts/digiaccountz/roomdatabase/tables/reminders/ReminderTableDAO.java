@@ -32,6 +32,9 @@ public interface ReminderTableDAO {
     @Query("DELETE FROM reminders_table WHERE transactionidd = :transId")
     public void deleteRemindersbyTransactionid(long transId);
 
+    @Query("DELETE FROM reminders_table WHERE customeridd = :cusId")
+    public void deleteRemindersbycustomerid(long cusId);
+
     @Query("DELETE FROM reminders_table WHERE id = :Id")
     public void deleteRemindersbyid(long Id);
 

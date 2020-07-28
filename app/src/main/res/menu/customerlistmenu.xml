@@ -5,8 +5,8 @@
     <item
         android:id="@+id/action_editcustomer"
         android:icon="@drawable/editcus"
-        app:showAsAction="always"
-        android:title="Add">
+        app:showAsAction="never"
+        android:title="Edit Customer">
     </item>
     <item
         android:id="@+id/action_calculator"

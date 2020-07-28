@@ -13,8 +13,6 @@ public class ContactsLoad {
     public  static ArrayList<ContactsBean> contactslist = new ArrayList<>();
 
 
-
-
     public static void getContactList(Context context) {
         ContentResolver cr = context.getContentResolver();
         Cursor cur = cr.query(ContactsContract.Contacts.CONTENT_URI,

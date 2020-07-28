@@ -31,6 +31,8 @@ public interface TransactionTableDAO {
     @Query("DELETE FROM transactions_table WHERE id = :Id")
     public void deleteTransactionById(long Id);
 
+    @Query("DELETE FROM transactions_table WHERE customerid = :Id")
+    public void deleteTransactionBycustomerId(long Id);
 
     @Query("SELECT * FROM transactions_table WHERE customerid= :customerid AND date BETWEEN :startdate AND :todate")
     public TransactionTable[] loadAllTransactionsDatesWiseWithCustomer(long customerid ,String startdate, String todate);

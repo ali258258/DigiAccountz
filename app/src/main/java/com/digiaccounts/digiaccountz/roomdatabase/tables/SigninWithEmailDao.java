@@ -24,8 +24,8 @@ public interface SigninWithEmailDao {
     @Query("SELECT * FROM useremail_table WHERE id=:idd")
     public SigninWithemailTable loadUserByID(long idd);
 
-    @Query("UPDATE useremail_table SET fullname=:name,pasword=:password WHERE id=:idd")
-    public int UpdateUserInfo(long idd,String name,String password);
+    @Query("UPDATE useremail_table SET fullname=:name,pasword=:password,email=:mail WHERE id=:idd")
+    public int UpdateUserInfo(long idd,String name,String password,String mail);
 
 
 }

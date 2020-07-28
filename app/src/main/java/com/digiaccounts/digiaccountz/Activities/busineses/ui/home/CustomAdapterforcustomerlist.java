@@ -1,6 +1,8 @@
 package com.digiaccounts.digiaccountz.Activities.busineses.ui.home;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -126,4 +128,6 @@ public class CustomAdapterforcustomerlist extends BaseAdapter implements Filtera
 
         return filter;
     }
+
+
 }
