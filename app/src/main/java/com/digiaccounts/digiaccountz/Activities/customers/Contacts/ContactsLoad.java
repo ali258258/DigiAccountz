@@ -7,13 +7,15 @@ import android.provider.ContactsContract;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ContactsLoad {
 
-    public  static ArrayList<ContactsBean> contactslist = new ArrayList<>();
+
+    public static ArrayList<ContactsBean> getContactList(Context context) {
 
 
-    public static void getContactList(Context context) {
+        ArrayList<ContactsBean> contactslist = new ArrayList<>();
         ContentResolver cr = context.getContentResolver();
         Cursor cur = cr.query(ContactsContract.Contacts.CONTENT_URI,
                 null, null, null, null);
@@ -35,7 +37,7 @@ public class ContactsLoad {
                     while (pCur.moveToNext()) {
                         String phoneNo = pCur.getString(pCur.getColumnIndex(
                                 ContactsContract.CommonDataKinds.Phone.NUMBER));
-                        contactslist.add(new ContactsBean(name,phoneNo));
+                        contactslist.add(new ContactsBean(name, phoneNo));
                         Log.i("sadasdsad", "Name: " + name);
                         Log.i("sadasdsad", "Phone Number: " + phoneNo);
                     }
@@ -43,9 +45,11 @@ public class ContactsLoad {
                 }
             }
         }
-        if(cur!=null){
+        if (cur != null) {
             cur.close();
         }
+
+        return contactslist;
     }
 
 

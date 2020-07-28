@@ -64,7 +64,6 @@ public class HomeActivityWithDrawer extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ff=0;
 
-    //    new MyContactTask().execute();
 
      //   ApplockHandling.homescreen = 0;
 
@@ -224,20 +223,6 @@ public class HomeActivityWithDrawer extends AppCompatActivity {
 
         }
 
-//    public class MyContactTask extends AsyncTask<String, Void, String> {
-//
-//
-//        @Override
-//        protected void onPostExecute(String s) {
-//            super.onPostExecute(s);
-//        }
-//
-//        @Override
-//        protected String doInBackground(String... strings) {
-//            ContactsLoad.getContactList(HomeActivityWithDrawer.this);
-//            return "success";
-//        }
-//    }
 
 
 }

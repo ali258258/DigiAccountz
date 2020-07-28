@@ -77,33 +77,33 @@ import java.util.TimeZone;
 public class TransactionAdd_RealActivity extends AppCompatActivity {
 
 
-    int ff =0;
+    int ff = 0;
     int PRIVATE_MODE = 0;
     String PREF_NAME = "digiaccountz";
 
 
-        String passingsystem="";
+    String passingsystem = "";
     TimePicker myTimePicker;
     TimePickerDialog timePickerDialog;
 
     Calendar calendar = Calendar.getInstance();
     String timestring;
 
-    public long transid=0;
+    public long transid = 0;
 
     String imagebase64 = "";
 
     static CreateTransactionCallback listener;
     static CreateTransactionCallback listenerforhome;
 
-    String businessid="";
-    String customerid="";
-    String statuss="";
+    String businessid = "";
+    String customerid = "";
+    String statuss = "";
     String nametitle;
     String type;
 
-    ImageView cashCh,supplisrCh,onlineCh;
-    TextView cashTv, suppliesTv,onlineTv;
+    ImageView cashCh, supplisrCh, onlineCh;
+    TextView cashTv, suppliesTv, onlineTv;
 
     EditText dateEt;
 
@@ -113,14 +113,14 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
     TextView cnhTv;
     ImageView backbtn;
 
-    DatePickerDialog.OnDateSetListener date,date2;
+    DatePickerDialog.OnDateSetListener date, date2;
     final Calendar myCalendar = Calendar.getInstance();
 
-    EditText amountEt,descriptionEt,reminderEt,imageEt;
-    String catagory="supplies";
+    EditText amountEt, descriptionEt, reminderEt, imageEt;
+    String catagory = "supplies";
     Button saveBtn;
 
-    LinearLayout imagelv,reminderlv;
+    LinearLayout imagelv, reminderlv;
     BusinessTable b;
 
     @Override
@@ -130,18 +130,17 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
         cnhTv = findViewById(R.id.cnhTv);
         imagelv = findViewById(R.id.imagelinear);
         reminderlv = findViewById(R.id.reminderlinear);
-        customerid= getIntent().getStringExtra("customeridd");
-        businessid= getIntent().getStringExtra("businessidd");
-        statuss= getIntent().getStringExtra("checkingstatus");
+        customerid = getIntent().getStringExtra("customeridd");
+        businessid = getIntent().getStringExtra("businessidd");
+        statuss = getIntent().getStringExtra("checkingstatus");
         nametitle = getIntent().getStringExtra("customername");
         type = getIntent().getStringExtra("customertype");
 
-         b =MainActivity.database.businessManageTable().loadWithID(Long.parseLong(businessid));
-        if(b==null){
-            Log.i("sasas","null");
-        }
-        else {
-            Log.i("sasas","have");
+        b = MainActivity.database.businessManageTable().loadWithID(Long.parseLong(businessid));
+        if (b == null) {
+            Log.i("sasas", "null");
+        } else {
+            Log.i("sasas", "have");
         }
         cnhTv.setText(nametitle);
         amountEt = findViewById(R.id.amountEt_inAT);
@@ -167,18 +166,17 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
         cashTv = findViewById(R.id.cashCBTvv_inAT);
         suppliesTv = findViewById(R.id.suppliesTv_inAT);
         onlineTv = findViewById(R.id.bankonlineTv_inAT);
-        ff=0;
+        ff = 0;
 
         supplisrCh.setImageResource(R.color.screenbackgroundsBlue);
 
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CustomerListActivity.ff=0;
+                CustomerListActivity.ff = 0;
                 finish();
             }
         });
-
 
 
         cashTv.setOnClickListener(new View.OnClickListener() {
@@ -206,7 +204,6 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
 
                 imagelv.setVisibility(View.VISIBLE);
                 reminderlv.setVisibility(View.VISIBLE);
-
 
 
             }
@@ -238,7 +235,6 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
 
                 imagelv.setVisibility(View.GONE);
                 reminderlv.setVisibility(View.GONE);
-
 
 
             }
@@ -325,7 +321,7 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
         imageEt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ff=0;
+                ff = 0;
                 imageselectionDailog();
             }
         });
@@ -333,7 +329,7 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
         dateEt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               DatePickerDialog pckkk =  new DatePickerDialog(TransactionAdd_RealActivity.this, date, myCalendar
+                DatePickerDialog pckkk = new DatePickerDialog(TransactionAdd_RealActivity.this, date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH));
                 pckkk.getDatePicker().setMaxDate(System.currentTimeMillis() - 1000);
@@ -355,31 +351,29 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
                             @Override
                             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
-                                newDate.set(year,month,dayOfMonth,hourOfDay,minute,0);
+                                newDate.set(year, month, dayOfMonth, hourOfDay, minute, 0);
                                 Calendar tem = Calendar.getInstance();
-                                Log.w("TIME",System.currentTimeMillis()+"");
-                                if(newDate.getTimeInMillis()-tem.getTimeInMillis()>0)
-                                {
+                                Log.w("TIME", System.currentTimeMillis() + "");
+                                if (newDate.getTimeInMillis() - tem.getTimeInMillis() > 0) {
                                     passingsystem = newDate.getTime().toString();
                                     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                                     formatter.format(newDate.getTime());
-                                    reminderEt.setText(""+formatter.format(newDate.getTime()));
+                                    reminderEt.setText("" + formatter.format(newDate.getTime()));
 
                                     SimpleDateFormat mSDF = new SimpleDateFormat("hh:mm a");
                                     String time = mSDF.format(newDate.getTime());
                                     timestring = time;
 
 
-                                }
-                                else
-                                    Toast.makeText(TransactionAdd_RealActivity.this,"Invalid time",Toast.LENGTH_SHORT).show();
+                                } else
+                                    Toast.makeText(TransactionAdd_RealActivity.this, "Invalid time", Toast.LENGTH_SHORT).show();
 
                             }
-                        },newTime.get(Calendar.HOUR_OF_DAY),newTime.get(Calendar.MINUTE),false);
+                        }, newTime.get(Calendar.HOUR_OF_DAY), newTime.get(Calendar.MINUTE), false);
                         time.show();
 
                     }
-                },newCalender.get(Calendar.YEAR),newCalender.get(Calendar.MONTH),newCalender.get(Calendar.DAY_OF_MONTH));
+                }, newCalender.get(Calendar.YEAR), newCalender.get(Calendar.MONTH), newCalender.get(Calendar.DAY_OF_MONTH));
 
                 dialog.getDatePicker().setMinDate(System.currentTimeMillis());
                 dialog.show();
@@ -392,109 +386,98 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
         });
 
 
-
-
-
-       // Toast.makeText(getApplicationContext(),Locale.getDefault().getDisplayLanguage(), Toast.LENGTH_LONG).show();
+        // Toast.makeText(getApplicationContext(),Locale.getDefault().getDisplayLanguage(), Toast.LENGTH_LONG).show();
 
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if (!amountEt.getText().toString().equalsIgnoreCase("")
-                && !dateEt.getText().toString().equalsIgnoreCase(""))
-                {
+                        && !dateEt.getText().toString().equalsIgnoreCase("")) {
 
                     if (!catagory.equalsIgnoreCase("")) {
-                        try
-                        {
-                        CustomerListActivity.ff=0;
-                        TransactionTable ob = new TransactionTable();
-                        ob.setAmount(amountEt.getText().toString());
-                        ob.setDate(dateEt.getText().toString());
-                        ob.setBusinessid(Long.parseLong(businessid));
-                        ob.setCustomerid(Long.parseLong(customerid));
-                        ob.setStatus(statuss);
-                        ob.setTimee(giveTime());
-                        ob.setTransactiontype(catagory);
-                        ob.setDescription(descriptionEt.getText().toString());
-                        ob.setReminder(reminderEt.getText().toString());
-                        ob.setImage(imagebase64);
-                        transid = MainActivity.database.transactionManageTable().AddTransaction(ob);
+                        try {
+                            CustomerListActivity.ff = 0;
+                            TransactionTable ob = new TransactionTable();
+                            ob.setAmount(amountEt.getText().toString());
+                            ob.setDate(dateEt.getText().toString());
+                            ob.setBusinessid(Long.parseLong(businessid));
+                            ob.setCustomerid(Long.parseLong(customerid));
+                            ob.setStatus(statuss);
+                            ob.setTimee(giveTime());
+                            ob.setTransactiontype(catagory);
+                            ob.setDescription(descriptionEt.getText().toString());
+                            ob.setReminder(reminderEt.getText().toString());
+                            ob.setImage(imagebase64);
+                            transid = MainActivity.database.transactionManageTable().AddTransaction(ob);
 
-                        CustomerTable t = MainActivity.database.customerManageTable().loadCustomerusingID(Long.parseLong(customerid));
-                        long c_balance = Integer.parseInt(t.getCustomer_balance());
-                        long c_youwillget = Integer.parseInt(t.getYouwillget_amount()); //recieved
-                        long c_youwillgive = Integer.parseInt(t.getYouwillgive_amount()); // sent
-                        long amt = Integer.parseInt(amountEt.getText().toString());
+                            CustomerTable t = MainActivity.database.customerManageTable().loadCustomerusingID(Long.parseLong(customerid));
+                            long c_balance = Integer.parseInt(t.getCustomer_balance());
+                            long c_youwillget = Integer.parseInt(t.getYouwillget_amount()); //recieved
+                            long c_youwillgive = Integer.parseInt(t.getYouwillgive_amount()); // sent
+                            long amt = Integer.parseInt(amountEt.getText().toString());
 
 
-                        BusinessTable b = MainActivity.database.businessManageTable().loadWithID(Long.parseLong(businessid));
-                        long b_balance = Integer.parseInt(b.getTotalamount());
-                        long b_youwillget = Integer.parseInt(b.getTotalrecieved()); //recieved
-                        long b_youwillgive = Integer.parseInt(b.getTotalgiven()); // sent
+                            BusinessTable b = MainActivity.database.businessManageTable().loadWithID(Long.parseLong(businessid));
+                            long b_balance = Integer.parseInt(b.getTotalamount());
+                            long b_youwillget = Integer.parseInt(b.getTotalrecieved()); //recieved
+                            long b_youwillgive = Integer.parseInt(b.getTotalgiven()); // sent
 
-                        if (statuss.equalsIgnoreCase("Sent")) {
-                            c_balance = c_balance - amt;
-                            c_youwillgive = c_youwillgive + amt;
+                            if (statuss.equalsIgnoreCase("Sent")) {
+                                c_balance = c_balance - amt;
+                                c_youwillgive = c_youwillgive + amt;
 
-                            b_balance = b_balance - amt;
-                            b_youwillgive = b_youwillgive + amt;
+                                b_balance = b_balance - amt;
+                                b_youwillgive = b_youwillgive + amt;
+                            } else if (statuss.equalsIgnoreCase("Recieved")) {
+                                c_balance = c_balance + amt;
+                                c_youwillget = c_youwillget + amt;
+
+                                b_balance = b_balance + amt;
+                                b_youwillget = b_youwillget + amt;
+                            }
+
+                            int dd = MainActivity.database.customerManageTable().UpdateAmountValues(Long.parseLong(customerid)
+                                    , Long.toString(c_balance)
+                                    , Long.toString(c_youwillget)
+                                    , Long.toString(c_youwillgive));
+
+                            int bb = MainActivity.database.businessManageTable().UpdateAmountValuesBusiness(Long.parseLong(businessid)
+                                    , Long.toString(b_balance)
+                                    , Long.toString(b_youwillget)
+                                    , Long.toString(b_youwillgive));
+
+                            listener.Callon(c_balance, c_youwillgive, c_youwillget);
+                            listenerforhome.Callon(c_balance, c_youwillgive, c_youwillget);
+
+
+                            if (!reminderEt.getText().toString().equalsIgnoreCase("")) {
+
+                                ReminderTable objj = new ReminderTable();
+                                objj.setCustomerid(Long.parseLong(customerid));
+                                objj.setBusinessid(Long.parseLong(businessid));
+                                objj.setDate(reminderEt.getText().toString());
+                                objj.setStatus("Active");
+                                objj.setCustomername(t.getFullname());
+                                objj.setTransactionid(transid);
+                                objj.setTime(timestring);
+                                long id = MainActivity.database.RemiderManageTable().AddReminder(objj);
+                                Log.i("dderereID", "" + id);
+                                addReminderNew(calendar, amountEt.getText().toString(), nametitle, dateEt.getText().toString(), Long.parseLong(customerid), id, businessid, b.getBusinessname());
+
+                            } else {
+                                finish();
+                            }
+
+                        } catch (Exception e) {
+                            Log.i("hhgg77gg", e.getMessage());
+                            Log.i("hhgg77gg", e.getMessage());
                         }
-                        else if (statuss.equalsIgnoreCase("Recieved")) {
-                            c_balance = c_balance + amt;
-                            c_youwillget = c_youwillget + amt;
 
-                            b_balance = b_balance + amt;
-                            b_youwillget = b_youwillget + amt;
-                        }
-
-                        int dd = MainActivity.database.customerManageTable().UpdateAmountValues(Long.parseLong(customerid)
-                                , Long.toString(c_balance)
-                                , Long.toString(c_youwillget)
-                                , Long.toString(c_youwillgive));
-
-                        int bb = MainActivity.database.businessManageTable().UpdateAmountValuesBusiness(Long.parseLong(businessid)
-                                , Long.toString(b_balance)
-                                , Long.toString(b_youwillget)
-                                , Long.toString(b_youwillgive));
-
-                        listener.Callon(c_balance, c_youwillgive, c_youwillget);
-                        listenerforhome.Callon(c_balance, c_youwillgive, c_youwillget);
-
-
-                        if (!reminderEt.getText().toString().equalsIgnoreCase(""))
-                        {
-
-                            ReminderTable objj = new ReminderTable();
-                            objj.setCustomerid(Long.parseLong(customerid));
-                            objj.setBusinessid(Long.parseLong(businessid));
-                            objj.setDate(reminderEt.getText().toString());
-                            objj.setStatus("Active");
-                            objj.setCustomername(t.getFullname());
-                            objj.setTransactionid(transid);
-                            objj.setTime(timestring);
-                            long id =MainActivity.database.RemiderManageTable().AddReminder(objj);
-                            Log.i("dderereID",""+id);
-                            addReminderNew(calendar,amountEt.getText().toString(),nametitle,dateEt.getText().toString(),Long.parseLong(customerid),id,businessid,b.getBusinessname());
-
-                        }
-                        else {
-                            finish();
-                        }
-
-                    }
-                    catch(Exception e){
-                        Log.i("hhgg77gg",e.getMessage());
-                        Log.i("hhgg77gg",e.getMessage());
-                    }
-
-                    }
-                    else {
+                    } else {
                         Toast.makeText(TransactionAdd_RealActivity.this, "please select transaction type", Toast.LENGTH_SHORT).show();
                     }
-                }
-                else {
+                } else {
                     Toast.makeText(TransactionAdd_RealActivity.this, "please provide mendatory details.", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -508,7 +491,8 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
 
         dateEt.setText(sdf.format(myCalendar.getTime()));
     }
-   private void updateLabel2() {
+
+    private void updateLabel2() {
         String myFormat = "dd/MM/yyyy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
         //reminderEt.setText(sdf.format(myCalendar.getTime()));
@@ -516,15 +500,15 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
 
     }
 
-    public static void setListenerCallback(CreateTransactionCallback callbacks){
+    public static void setListenerCallback(CreateTransactionCallback callbacks) {
         listener = callbacks;
     }
-    public static void setListenerCallbackforhome(CreateTransactionCallback callbacks){
+
+    public static void setListenerCallbackforhome(CreateTransactionCallback callbacks) {
         listenerforhome = callbacks;
     }
 
-    public Bitmap AdjustRotation(String photoPath,Bitmap bitmap)
-    {
+    public Bitmap AdjustRotation(String photoPath, Bitmap bitmap) {
         ExifInterface ei = null;
         try {
             ei = new ExifInterface(photoPath);
@@ -535,7 +519,7 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
                 ExifInterface.ORIENTATION_UNDEFINED);
 
         Bitmap rotatedBitmap = null;
-        switch(orientation) {
+        switch (orientation) {
 
             case ExifInterface.ORIENTATION_ROTATE_90:
                 rotatedBitmap = rotateImage(bitmap, 90);
@@ -555,7 +539,7 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
         }
 
 
-        return  rotatedBitmap;
+        return rotatedBitmap;
     }
 
 
@@ -571,20 +555,20 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        switch(requestCode) {
+        switch (requestCode) {
             case 1:
-                if(resultCode == RESULT_OK){
+                if (resultCode == RESULT_OK) {
                     Uri selectedImage = data.getData();
                     try {
                         Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImage);
-                        Drawable d = new BitmapDrawable(getResources(),  Bitmap.createScaledBitmap(bitmap, 50, 50, true));
-                        imageEt.setCompoundDrawablesWithIntrinsicBounds(null,null,d,null);
+                        Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 50, 50, true));
+                        imageEt.setCompoundDrawablesWithIntrinsicBounds(null, null, d, null);
                         imageEt.setText("Image Attached");
                         imageEt.setEnabled(false);
 
                         ByteArrayOutputStream baos = new ByteArrayOutputStream();
                         bitmap.compress(Bitmap.CompressFormat.JPEG, 50, baos);
-                       // bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos); // bm is the bitmap object
+                        // bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos); // bm is the bitmap object
                         byte[] b = baos.toByteArray();
 
                         imagebase64 = Base64.encodeToString(b, Base64.DEFAULT);
@@ -597,23 +581,23 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
                 break;
 
             case 10:
-                if(resultCode == RESULT_OK){
+                if (resultCode == RESULT_OK) {
                     try {
-                     //   Uri extras = data.getData();
+                        //   Uri extras = data.getData();
 
                         Bitmap bitmap = android.provider.MediaStore.Images.Media.getBitmap(getContentResolver(), currentPhotoURi);
 
-                        bitmap=AdjustRotation(getPath(TransactionAdd_RealActivity.this,currentPhotoURi),bitmap);
+                        bitmap = AdjustRotation(currentPhotoPath, bitmap);
                         //  Bitmap bitmap = (Bitmap) extras.get("data");
-                      //  Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), ex);
-                        Drawable d = new BitmapDrawable(getResources(),  Bitmap.createScaledBitmap(bitmap, 50, 50, true));
-                        imageEt.setCompoundDrawablesWithIntrinsicBounds(null,null,d,null);
+                        //  Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), ex);
+                        Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 50, 50, true));
+                        imageEt.setCompoundDrawablesWithIntrinsicBounds(null, null, d, null);
                         imageEt.setText("Image Attached");
                         imageEt.setEnabled(false);
 
                         ByteArrayOutputStream baos = new ByteArrayOutputStream();
                         bitmap.compress(Bitmap.CompressFormat.JPEG, 50, baos);
-                      //  bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos); // bm is the bitmap object
+                        //  bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos); // bm is the bitmap object
                         byte[] b = baos.toByteArray();
 
                         imagebase64 = Base64.encodeToString(b, Base64.DEFAULT);
@@ -621,64 +605,12 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
 
                     } catch (Exception e) {
                         e.printStackTrace();
-                        Log.i("assd3wd","err: "+e.getMessage());
-                        Toast.makeText(TransactionAdd_RealActivity.this, "> "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Log.i("assd3wd", "err: " + e.getMessage());
+                        Toast.makeText(TransactionAdd_RealActivity.this, "> " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
                 break;
         }
-    }
-    public static String getPath(final Context context, final Uri uri) {
-        final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
-        Log.i("URI",uri+"");
-        String result = uri+"";
-        // DocumentProvider
-        //  if (isKitKat && DocumentsContract.isDocumentUri(context, uri)) {
-        if (isKitKat && (result.contains("media.documents"))) {
-            String[] ary = result.split("/");
-            int length = ary.length;
-            String imgary = ary[length-1];
-            final String[] dat = imgary.split("%3A");
-            final String docId = dat[1];
-            final String type = dat[0];
-            Uri contentUri = null;
-            if ("image".equals(type)) {
-                contentUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-            } else if ("video".equals(type)) {
-            } else if ("audio".equals(type)) {
-            }
-            final String selection = "_id=?";
-            final String[] selectionArgs = new String[] {
-                    dat[1]
-            };
-            return getDataColumn(context, contentUri, selection, selectionArgs);
-        } else if ("content".equalsIgnoreCase(uri.getScheme())) {
-            return getDataColumn(context, uri, null, null);
-        }
-        // File
-        else if ("file".equalsIgnoreCase(uri.getScheme())) {
-            return uri.getPath();
-        }
-        return null;
-    }
-
-    public static String getDataColumn(Context context, Uri uri, String selection, String[] selectionArgs) {
-        Cursor cursor = null;
-        final String column = "_data";
-        final String[] projection = {
-                column
-        };
-        try {
-            cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs, null);
-            if (cursor != null && cursor.moveToFirst()) {
-                final int column_index = cursor.getColumnIndexOrThrow(column);
-                return cursor.getString(column_index);
-            }
-        } finally {
-            if (cursor != null)
-                cursor.close();
-        }
-        return null;
     }
 
     private void openTimePickerDialog(boolean is24r) {
@@ -712,18 +644,18 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
 
             SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
             formatter.format(calendar.getTime());
-            reminderEt.setText(""+formatter.format(calendar.getTime()));
+            reminderEt.setText("" + formatter.format(calendar.getTime()));
 
             SimpleDateFormat mSDF = new SimpleDateFormat("hh:mm a");
             String time = mSDF.format(calendar.getTime());
             timestring = time;
-          //  Toast.makeText(TransactionAdd_RealActivity.this, ":"+timestring, Toast.LENGTH_SHORT).show();
+            //  Toast.makeText(TransactionAdd_RealActivity.this, ":"+timestring, Toast.LENGTH_SHORT).show();
         }
     };
 
 
-    private void setAlarm(Calendar targetCal,String amount, String name, String date,long customerid,int reminderid) {
-      //  reminderEt.setText(""+targetCal.getTime());
+    private void setAlarm(Calendar targetCal, String amount, String name, String date, long customerid, int reminderid) {
+        //  reminderEt.setText(""+targetCal.getTime());
 
 
 //        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
@@ -732,13 +664,13 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
         CustomerTable c = MainActivity.database.customerManageTable().loadCustomerusingID(customerid);
 
         Intent intent = new Intent(TransactionAdd_RealActivity.this, RemiderBroadcast.class);
-        intent.putExtra("amttt",amount);
-        intent.putExtra("namee",name);
-        intent.putExtra("status",c.getCatagory());
-        intent.putExtra("datee",date);
+        intent.putExtra("amttt", amount);
+        intent.putExtra("namee", name);
+        intent.putExtra("status", c.getCatagory());
+        intent.putExtra("datee", date);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(TransactionAdd_RealActivity.this, reminderid, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Toast.makeText(this, "sddsd"+targetCal.getTimeInMillis(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "sddsd" + targetCal.getTimeInMillis(), Toast.LENGTH_SHORT).show();
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, targetCal.getTimeInMillis(), pendingIntent);
         finish();
 
@@ -758,10 +690,10 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
     }
 
 
-    public void imageselectionDailog(){
+    public void imageselectionDailog() {
         final Dialog dialog = new Dialog(TransactionAdd_RealActivity.this);
         dialog.setContentView(R.layout.custom_imageselectiondailog);
-        Button camera =dialog.findViewById(R.id.cameraaBtn);
+        Button camera = dialog.findViewById(R.id.cameraaBtn);
         Button gallery = dialog.findViewById(R.id.galleryBtn);
 
         camera.setOnClickListener(new View.OnClickListener() {
@@ -773,10 +705,9 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
                     currentPhotoURi = photoURI;
                     takePicture.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, photoURI);
                     startActivityForResult(takePicture, 10);
-                }
-                catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
-                    Toast.makeText(TransactionAdd_RealActivity.this, "->"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TransactionAdd_RealActivity.this, "->" + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
                 dialog.dismiss();
             }
@@ -787,58 +718,51 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent pickPhoto = new Intent(Intent.ACTION_PICK,
                         android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(pickPhoto , 1);
+                startActivityForResult(pickPhoto, 1);
                 dialog.dismiss();
             }
         });
-
-
-
 
 
         dialog.show();
     }
 
 
+    public void addReminderNew(Calendar targetCal, final String amount, final String name, final String date, long customerid, final long reminderid, String businessiid, String bsunessname) {
 
-
-    public void addReminderNew(Calendar targetCal, final String amount, final String name, final String date, long customerid, final long reminderid,String businessiid,String bsunessname){
-
-        Log.i("sdsdsdsd","->"+reminderid);
+        Log.i("sdsdsdsd", "->" + reminderid);
 
         final CustomerTable c = MainActivity.database.customerManageTable().loadCustomerusingID(customerid);
 
 
-                Date remind = new Date(passingsystem.trim());
-                Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+5:30"));
-                calendar.setTime(remind);
-                calendar.set(Calendar.SECOND,0);
-                Intent intent = new Intent(TransactionAdd_RealActivity.this,RemiderBroadcast.class);
-                intent.putExtra("amttt",amount);
-                intent.putExtra("namee",name);
-                intent.putExtra("status",c.getCatagory());
-                intent.putExtra("datee",date);
-                intent.putExtra("reminderid",""+reminderid);
-                intent.putExtra("businessidd",""+businessiid);
-                intent.putExtra("businessname",""+bsunessname);
-                PendingIntent intent1 = PendingIntent.getBroadcast(TransactionAdd_RealActivity.this,(int)reminderid,intent,PendingIntent.FLAG_UPDATE_CURRENT);
-                AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+        Date remind = new Date(passingsystem.trim());
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+5:30"));
+        calendar.setTime(remind);
+        calendar.set(Calendar.SECOND, 0);
+        Intent intent = new Intent(TransactionAdd_RealActivity.this, RemiderBroadcast.class);
+        intent.putExtra("amttt", amount);
+        intent.putExtra("namee", name);
+        intent.putExtra("status", c.getCatagory());
+        intent.putExtra("datee", date);
+        intent.putExtra("reminderid", "" + reminderid);
+        intent.putExtra("businessidd", "" + businessiid);
+        intent.putExtra("businessname", "" + bsunessname);
+        PendingIntent intent1 = PendingIntent.getBroadcast(TransactionAdd_RealActivity.this, (int) reminderid, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
-        if(Build.VERSION.SDK_INT < 23){
-            if(Build.VERSION.SDK_INT >= 19){
-                alarmManager.setExact(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),intent1);
+        if (Build.VERSION.SDK_INT < 23) {
+            if (Build.VERSION.SDK_INT >= 19) {
+                alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), intent1);
+            } else {
+                alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), intent1);
             }
-            else{
-                alarmManager.set(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),intent1);
-            }
-        }
-        else{
-            alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),intent1);
+        } else {
+            alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), intent1);
         }
 
 
-                Toast.makeText(TransactionAdd_RealActivity.this,"Inserted Successfully",Toast.LENGTH_SHORT).show();
-                finish();
+        Toast.makeText(TransactionAdd_RealActivity.this, "Inserted Successfully", Toast.LENGTH_SHORT).show();
+        finish();
 
     }
 
@@ -846,16 +770,15 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (ff == 0){
+        if (ff == 0) {
             ff++;
-        }
-        else {
-            SharedPreferences sharedPref= getSharedPreferences(PREF_NAME, PRIVATE_MODE);
-            final String stringObject = sharedPref.getString("applockstatus","");
-            if (stringObject.equalsIgnoreCase("enable")){
+        } else {
+            SharedPreferences sharedPref = getSharedPreferences(PREF_NAME, PRIVATE_MODE);
+            final String stringObject = sharedPref.getString("applockstatus", "");
+            if (stringObject.equalsIgnoreCase("enable")) {
                 Intent i = new Intent(TransactionAdd_RealActivity.this, ApplockActivity.class);
-                i.putExtra("wheree","other");
-                ff=0;
+                i.putExtra("wheree", "other");
+                ff = 0;
                 startActivity(i);
             }
 
@@ -864,9 +787,9 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
     }
 
 
-
     String currentPhotoPath;
     Uri currentPhotoURi;
+
     private File createImageFile() throws IOException {
         // Create an image file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
@@ -887,14 +810,13 @@ public class TransactionAdd_RealActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        CustomerListActivity.ff=0;
+        CustomerListActivity.ff = 0;
         finish();
     }
 
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
+    public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 onBackPressed();
