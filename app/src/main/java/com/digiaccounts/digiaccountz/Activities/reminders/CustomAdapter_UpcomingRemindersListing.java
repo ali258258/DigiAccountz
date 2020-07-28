@@ -31,6 +31,7 @@ import com.digiaccounts.digiaccountz.Activities.callbacks.CreateTransactionCallb
 import com.digiaccounts.digiaccountz.Activities.callbacks.ReminderUpdateCallback;
 import com.digiaccounts.digiaccountz.Activities.customers.customerDetailsBean;
 import com.digiaccounts.digiaccountz.R;
+import com.digiaccounts.digiaccountz.roomdatabase.MyDatabase;
 import com.digiaccounts.digiaccountz.roomdatabase.tables.business.BusinessTable;
 import com.digiaccounts.digiaccountz.roomdatabase.tables.customer.CustomerTable;
 import com.digiaccounts.digiaccountz.roomdatabase.tables.reminders.ReminderTable;
@@ -60,6 +61,8 @@ public class CustomAdapter_UpcomingRemindersListing extends BaseAdapter {
     Calendar calendar = Calendar.getInstance();
     TimePickerDialog timePickerDialog;
 
+    MyDatabase database;
+
     String timestring = "";
     String dateString = "";
     long transid= 0;
@@ -67,9 +70,10 @@ public class CustomAdapter_UpcomingRemindersListing extends BaseAdapter {
     String who ;
 
 
-    public CustomAdapter_UpcomingRemindersListing(Context c, ReminderTable[] l,String whoo) {
+    public CustomAdapter_UpcomingRemindersListing(Context c, ReminderTable[] l,String whoo, MyDatabase data) {
         context = c;
         list=l;
+        database = data;
         who = whoo;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -198,10 +202,10 @@ public class CustomAdapter_UpcomingRemindersListing extends BaseAdapter {
 
     private void setAlarm(Calendar targetCal,long transid) {
 
-        ReminderTable rr = MainActivity.database.RemiderManageTable().loadAllRemindersbyTransactionID(transid);
-        TransactionTable tr = MainActivity.database.transactionManageTable().loadAllTransactionByTransactionID(transid);
-        CustomerTable cr = MainActivity.database.customerManageTable().loadCustomerusingID(tr.getCustomerid());
-        BusinessTable br = MainActivity.database.businessManageTable().loadWithID(tr.getBusinessid());
+        ReminderTable rr = database.RemiderManageTable().loadAllRemindersbyTransactionID(transid);
+        TransactionTable tr = database.transactionManageTable().loadAllTransactionByTransactionID(transid);
+        CustomerTable cr = database.customerManageTable().loadCustomerusingID(tr.getCustomerid());
+        BusinessTable br = database.businessManageTable().loadWithID(tr.getBusinessid());
 
 
         Date remind = new Date(targetCal.getTime().toString().trim());
@@ -231,7 +235,7 @@ public class CustomAdapter_UpcomingRemindersListing extends BaseAdapter {
             alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),intent1);
         }
 
-        MainActivity.database.RemiderManageTable().UpdateRemiderDateTime(transid,dateString,timestring);
+        database.RemiderManageTable().UpdateRemiderDateTime(transid,dateString,timestring);
 
         if (listener!=null) {
             listener.Callon();
@@ -268,7 +272,7 @@ public class CustomAdapter_UpcomingRemindersListing extends BaseAdapter {
 
     private void showPopupMenu( final long id, View view) {
         Log.i("7788jujnhg","::"+id);
-        final ReminderTable rr = MainActivity.database.RemiderManageTable().loadAllRemindersbyID(id);
+        final ReminderTable rr = database.RemiderManageTable().loadAllRemindersbyID(id);
         // inflate menu and attach it to a view onClick of which you want to display menu
         PopupMenu popup = new PopupMenu(context, view);
         MenuInflater inflater = popup.getMenuInflater();
