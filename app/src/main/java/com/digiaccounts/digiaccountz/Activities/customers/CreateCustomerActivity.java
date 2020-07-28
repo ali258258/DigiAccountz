@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.Contacts;
 import android.provider.ContactsContract;
@@ -43,6 +44,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class CreateCustomerActivity extends AppCompatActivity {
 
@@ -257,7 +259,11 @@ public class CreateCustomerActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.custom_contactsdailog);
         ListView lv =dialog.findViewById(R.id.mylistview);
         EditText search = dialog.findViewById(R.id.searchEt_contatcs);
-        adap_contacts = new CustomAdapter_contacts(CreateCustomerActivity.this, ContactsLoad.contactslist);
+
+        TextView loadingtext = dialog.findViewById(R.id.loadingtext);
+
+
+        new MyContactTask(lv,loadingtext).execute();
         lv.setAdapter(adap_contacts);
 
         search.addTextChangedListener(new TextWatcher() {
@@ -375,4 +381,30 @@ public class CreateCustomerActivity extends AppCompatActivity {
         }
     }
 
+    public class MyContactTask extends AsyncTask<String, Void, ArrayList<ContactsBean>> {
+
+        ListView listView;
+        TextView loadingtext;
+
+        public MyContactTask(ListView listView, TextView loadingtext) {
+            this.listView = listView;
+            this.loadingtext = loadingtext;
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList<ContactsBean> s) {
+            super.onPostExecute(s);
+            adap_contacts = new CustomAdapter_contacts(CreateCustomerActivity.this,s);
+            listView.setAdapter(adap_contacts);
+            listView.setVisibility(View.VISIBLE);
+            loadingtext.setVisibility(View.GONE);
+
+        }
+
+        @Override
+        protected ArrayList<ContactsBean> doInBackground(String... strings) {
+           return ContactsLoad.getContactList(CreateCustomerActivity.this);
+
+        }
+    }
 }
