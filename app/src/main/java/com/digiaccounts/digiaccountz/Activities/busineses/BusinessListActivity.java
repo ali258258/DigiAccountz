@@ -412,7 +412,7 @@ public class BusinessListActivity extends AppCompatActivity {
             textH = "You will Recieve";
         }
         else if (Integer.parseInt(totalRecieved)<Integer.parseInt(totalsent)) {
-            textH = "You will Give";
+            textH = "You will Pay";
         }
 
 
@@ -479,7 +479,6 @@ public class BusinessListActivity extends AppCompatActivity {
             transy = transy+30;
         }
 
-
         mypage.getCanvas().drawLine(15,transy-15,pagewidht-15,transy-15,mypaint);
 
         transy = transy+15;
@@ -487,11 +486,13 @@ public class BusinessListActivity extends AppCompatActivity {
         mypaint.setTextAlign(Paint.Align.RIGHT);
         mypage.getCanvas().drawText("Date: "+giveDate()+" "+giveTime(),pagewidht-20,transy,mypaint);
         transy=transy+20;
-        mypage.getCanvas().drawText(textH+": "+businessbalance,pagewidht-20,transy,mypaint);
+        mypage.getCanvas().drawText(textH+": "+bigDecimalData(""+Math.abs(Integer.parseInt(businessbalance))),pagewidht-20,transy,mypaint);
         transy=transy+20;
-        mypage.getCanvas().drawText("Total Recieved: "+totalRecieved,pagewidht-20,transy,mypaint);
+        mypage.getCanvas().drawText("You Will Recieve: "+bigDecimalData(""+Math.abs(Integer.parseInt(totalRecieved))),pagewidht-20,transy,mypaint);
         transy=transy+20;
-        mypage.getCanvas().drawText("Total Sent: "+totalsent,pagewidht-20,transy,mypaint);
+        mypage.getCanvas().drawText("You Will Pay: "+bigDecimalData(""+Math.abs(Integer.parseInt(totalsent))),pagewidht-20,transy,mypaint);
+
+
 
 
         transy=transy+30;
@@ -534,6 +535,16 @@ public class BusinessListActivity extends AppCompatActivity {
 
 
     public void customerwiseReport(String business ,String customername,String customerbalance,String totalRecieved,String totalsent,CustomerTable customers){
+
+
+String textH="";
+        if (Integer.parseInt(totalRecieved)>=Integer.parseInt(totalsent)){
+            textH = "You will Recieve";
+        }
+        else if (Integer.parseInt(totalRecieved)<Integer.parseInt(totalsent)) {
+            textH = "You will Pay";
+        }
+
         PdfDocument mypdfdocument = new PdfDocument();
         PdfDocument.PageInfo mypageinfo = new PdfDocument.PageInfo.Builder(1200,2010,1).create();
         PdfDocument.Page mypage = mypdfdocument.startPage(mypageinfo);
@@ -602,13 +613,15 @@ public class BusinessListActivity extends AppCompatActivity {
         mypaint.setTextAlign(Paint.Align.RIGHT);
         mypage.getCanvas().drawText("Business: "+business,pagewidht-20,transy,mypaint);
         transy=transy+20;
+
         mypage.getCanvas().drawText("Date: "+giveDate()+" "+giveTime(),pagewidht-20,transy,mypaint);
         transy=transy+20;
-        mypage.getCanvas().drawText(customers.getCatagory()+" Balance: "+customerbalance,pagewidht-20,transy,mypaint);
+        mypage.getCanvas().drawText(customers.getCatagory()+" Balance: "+bigDecimalData(""+Math.abs(Integer.parseInt(customerbalance))),pagewidht-20,transy,mypaint);
         transy=transy+20;
-        mypage.getCanvas().drawText("Total Recieved: "+totalRecieved,pagewidht-20,transy,mypaint);
+        mypage.getCanvas().drawText("You Will Recieve: "+bigDecimalData(""+Math.abs(Integer.parseInt(totalRecieved))),pagewidht-20,transy,mypaint);
         transy=transy+20;
-        mypage.getCanvas().drawText("Total Sent: "+totalsent,pagewidht-20,transy,mypaint);
+        mypage.getCanvas().drawText("You Will Pay: "+bigDecimalData(""+Math.abs(Integer.parseInt(totalsent))),pagewidht-20,transy,mypaint);
+
 
 
         transy=transy+30;

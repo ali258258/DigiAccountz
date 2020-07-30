@@ -41,7 +41,7 @@
             />
 
         <TextView
-            android:layout_weight="1"
+            android:layout_weight="0.9"
             android:textAlignment="textEnd"
             android:layout_width="0dp"
             android:id="@+id/timeEt_inR"
@@ -58,7 +58,7 @@
 
         <ImageView
             android:layout_width="0dp"
-            android:layout_weight="0.2"
+            android:layout_weight="0.3"
             android:id="@+id/overflowbtn"
             android:layout_gravity="right"
             android:layout_height="wrap_content"

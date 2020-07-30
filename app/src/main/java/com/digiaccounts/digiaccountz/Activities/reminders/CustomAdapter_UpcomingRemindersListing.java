@@ -173,6 +173,8 @@ public class CustomAdapter_UpcomingRemindersListing extends BaseAdapter {
 //            overflow.setVisibility(View.GONE);
 //        }
 
+
+
         overflow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
