@@ -56,7 +56,7 @@ public class UpcomingActivityNotification extends AppCompatActivity implements R
 
         final ReminderTable[] list = database.RemiderManageTable().loadAllRemindersByBusinessID(Long.parseLong(businessidStr));
         final BusinessTable bs = database.businessManageTable().loadWithID(Long.parseLong(businessidStr));
-        adap = new CustomAdapter_UpcomingRemindersListing(this,list,"hide");
+        adap = new CustomAdapter_UpcomingRemindersListing(this,list,"hide",database);
         lv.setAdapter(adap);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -136,7 +136,7 @@ public class UpcomingActivityNotification extends AppCompatActivity implements R
     public void Callon() {
         ReminderTable[] list = database.RemiderManageTable().loadAllRemindersByBusinessID(Long.parseLong(businessidStr));
         BusinessTable bs = database.businessManageTable().loadWithID(Long.parseLong(businessidStr));
-        adap = new CustomAdapter_UpcomingRemindersListing(UpcomingActivityNotification.this,list,"show");
+        adap = new CustomAdapter_UpcomingRemindersListing(UpcomingActivityNotification.this,list,"show",database);
         lv.setAdapter(adap);
     }
 }

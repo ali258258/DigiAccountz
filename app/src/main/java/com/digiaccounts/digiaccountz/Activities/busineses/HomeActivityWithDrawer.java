@@ -211,10 +211,7 @@ public class HomeActivityWithDrawer extends AppCompatActivity {
                 ff = 0;
                 startActivity(i);
             }
-
-
         }
-
     }
 
 
