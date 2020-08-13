@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Digi Accountz</string>
+    <string name="app_name">Cashyfy</string>
     <string name="title_activity_home_with_drawer">HomeActivityWithDrawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -128,6 +128,19 @@
     <string name="customerstr_inADDC">Customer</string>
     <string name="supplierstr_inADDC">Supplier</string>
     <string name="submitstr_inADDC">Next</string>
+    <string name="reports">Downloads</string>
+    <string name="file_deleted">Report Deleted</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="dummy_name">Michel Jackson</string>
+    <string name="customer_balance">Net You have to Recieve</string>
+    <string name="total_sent">Total to Recieve</string>
+    <string name="total_recieved">Total to Pay</string>
+    <string name="transaction_type">Transaction Type</string>
+    <string name="current_customer_report">current_customer_report</string>
+    <string name="download">Download/Export</string>
+    <string name="net_balance">Net You have to Recieve</string>
+    <string name="currnt_full_business_report">currnt_full_business_report</string>
+    <string name="back_to_menu">Back to main menu</string>
 
 
 </resources>

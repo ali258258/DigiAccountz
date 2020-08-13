@@ -67,7 +67,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/busnessEtlogin"
                     android:inputType="text"
-                    android:hint="Digi Accountz."/>
+                    android:hint="Cashyfy."/>
 
             </LinearLayout>
 

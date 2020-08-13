@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Report_All.Activities.View_Report"
+    >
+
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:padding="@dimen/_15sdp"
+            android:src="@drawable/ic_arrow_back_white_24dp"
+            android:onClick="backbtn"
+            />
+
+
+
+        <TextView
+            style="@style/HeaderTV"
+            android:id="@+id/htv3"
+            android:text="@string/reports"
+            ></TextView>
+
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/recyclerview1"
+        ></androidx.recyclerview.widget.RecyclerView>
+
+
+
+
+
+
+
+
+</LinearLayout>

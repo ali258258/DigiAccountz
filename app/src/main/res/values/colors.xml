@@ -7,4 +7,12 @@
     <color name="screenbackgroundsBlue">#0066ff</color>
     <color name="appTextColor">#464747</color>
     <color name="appTextColorPurple">#ae09a5</color>
+
+
+    <color name="report_value_color">#BC0000</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey">#838383</color>
+    <color name="green">#56CF2C</color>
 </resources>

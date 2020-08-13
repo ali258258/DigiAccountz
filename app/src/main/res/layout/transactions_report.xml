@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="5"
+        android:orientation="horizontal"
+
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ID"
+            android:id="@+id/tv_my_id"
+            android:maxLines="2"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Type"
+            android:textColor="@color/black"
+            android:maxLines="2"
+            android:id="@+id/tv_my_transaction_type"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+
+            android:textSize="@dimen/_8ssp"
+            />
+
+
+
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Amount"
+            android:id="@+id/tv_my_transaction_amount"
+            android:maxLines="2"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:textColor="@color/appTextColorPurple"
+            android:textSize="@dimen/_8ssp"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="Description "
+            android:textColor="@color/black"
+            android:maxLines="2"
+            android:id="@+id/tv_my_transaction_description"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:textSize="@dimen/_8ssp"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/black"
+
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        />
+
+
+
+</LinearLayout>

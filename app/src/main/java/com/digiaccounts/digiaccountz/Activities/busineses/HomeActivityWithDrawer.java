@@ -2,34 +2,24 @@ package com.digiaccounts.digiaccountz.Activities.busineses;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.PopupMenu;
-import android.widget.Toast;
 
 import com.digiaccounts.digiaccountz.Activities.ApplockActivity;
-import com.digiaccounts.digiaccountz.Activities.ApplockHandling;
 import com.digiaccounts.digiaccountz.Activities.LoginActivity;
 import com.digiaccounts.digiaccountz.Activities.MainActivity;
 import com.digiaccounts.digiaccountz.Activities.ProfileActivity;
 import com.digiaccounts.digiaccountz.Activities.SettingsActivity;
 import com.digiaccounts.digiaccountz.Activities.TermsandCondition_Activity;
 import com.digiaccounts.digiaccountz.Activities.busineses.ui.home.HomeFragment;
-import com.digiaccounts.digiaccountz.Activities.customers.Contacts.ContactsLoad;
-import com.digiaccounts.digiaccountz.Activities.languagemanage.LanguageManager;
 import com.digiaccounts.digiaccountz.Activities.reminders.UpComingRemindersActivity;
-import com.digiaccounts.digiaccountz.Activities.signups.LanguageSelectionActivity;
 import com.digiaccounts.digiaccountz.R;
-import com.digiaccounts.digiaccountz.roomdatabase.tables.loginmanage.LoginManageTable;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import com.digiaccounts.digiaccountz.Report_All.Others.Utils;
+import com.digiaccounts.digiaccountz.Report_All.Activities.View_Report;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
@@ -41,18 +31,18 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import java.io.File;
-
 public class HomeActivityWithDrawer extends AppCompatActivity {
 
     int PRIVATE_MODE = 0;
     String PREF_NAME = "digiaccountz";
 
-    public static  int condition = 0;
+    public static int condition = 0;
     private AppBarConfiguration mAppBarConfiguration;
+
+    Utils utils;
     MenuItem itemm;
 
-  public static int ff = 0;
+    public static int ff = 0;
 
 
     @Override
@@ -62,12 +52,11 @@ public class HomeActivityWithDrawer extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
-        ff=0;
+        ff = 0;
 
+        utils = new Utils(this);
 
-     //   ApplockHandling.homescreen = 0;
-
-
+        //   ApplockHandling.homescreen = 0;
 
 
 //        FloatingActionButton fab = findViewById(R.id.fab);
@@ -97,9 +86,9 @@ public class HomeActivityWithDrawer extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_logout_me:
-                        int u= MainActivity.database.loginManageTable().UpdateStatus("deactive", LoginActivity.id);
-                       // Toast.makeText(HomeActivityWithDrawer.this, "::"+u, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(HomeActivityWithDrawer.this,LoginActivity.class));
+                        int u = MainActivity.database.loginManageTable().UpdateStatus("deactive", LoginActivity.id);
+                        // Toast.makeText(HomeActivityWithDrawer.this, "::"+u, Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(HomeActivityWithDrawer.this, LoginActivity.class));
                         finish();
                         return true;
                     case R.id.nav_homep:
@@ -109,7 +98,7 @@ public class HomeActivityWithDrawer extends AppCompatActivity {
                     case R.id.nav_slideshow:
                         drawer.closeDrawers();
                         startActivity(new Intent(HomeActivityWithDrawer.this, TermsandCondition_Activity.class));
-                       // showPopupMenu(navigationView);
+                        // showPopupMenu(navigationView);
                         return true;
                     case R.id.nav_downloads:
                         drawer.closeDrawers();
@@ -119,8 +108,8 @@ public class HomeActivityWithDrawer extends AppCompatActivity {
                     case R.id.nav_gallery:
                         drawer.closeDrawers();
                         Intent intent = new Intent(HomeActivityWithDrawer.this, UpComingRemindersActivity.class);
-                        intent.putExtra("businessidd",""+HomeFragment.currentBusinessID);
-                        intent.putExtra("businessname",""+ HomeFragment.currentBusinessName);
+                        intent.putExtra("businessidd", "" + HomeFragment.currentBusinessID);
+                        intent.putExtra("businessname", "" + HomeFragment.currentBusinessName);
                         startActivity(intent);
                         return true;
 //                    case R.id.nav_languageselection:
@@ -135,7 +124,6 @@ public class HomeActivityWithDrawer extends AppCompatActivity {
                 }
             }
         });
-
 
 
     }
@@ -158,7 +146,7 @@ public class HomeActivityWithDrawer extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
-     //    Toast.makeText(this, "::", Toast.LENGTH_SHORT).show();
+        //    Toast.makeText(this, "::", Toast.LENGTH_SHORT).show();
         switch (item.getItemId()) {
             case R.id.action_settings:
                 startActivity(new Intent(HomeActivityWithDrawer.this, SettingsActivity.class));
@@ -169,7 +157,7 @@ public class HomeActivityWithDrawer extends AppCompatActivity {
     }
 
 
-    private void showPopupMenu( View view) {
+    private void showPopupMenu(View view) {
         // inflate menu and attach it to a view onClick of which you want to display menu
         PopupMenu popup = new PopupMenu(HomeActivityWithDrawer.this, view);
         MenuInflater inflater = popup.getMenuInflater();
@@ -194,35 +182,40 @@ public class HomeActivityWithDrawer extends AppCompatActivity {
     }
 
 
-    public void openFolder(){
+    public void openFolder() {
+        /*
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         Uri uri = Uri.parse(Environment.getExternalStorageDirectory().getPath()
-                +  File.separator + "DigiPDF" + File.separator);
+                +  File.separator + "Cashify" + File.separator);
         intent.setDataAndType(uri, "text/csv");
         startActivity(Intent.createChooser(intent, "Open folder"));
+
+
+         */
+
+        utils.SwitchActivity(View_Report.class);
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        if (ff == 0){
+        if (ff == 0) {
             ff++;
-        }
-        else {
-                SharedPreferences sharedPref = getSharedPreferences(PREF_NAME, PRIVATE_MODE);
-                final String stringObject = sharedPref.getString("applockstatus", "");
-                if (stringObject.equalsIgnoreCase("enable")) {
-                    Intent i = new Intent(HomeActivityWithDrawer.this, ApplockActivity.class);
-                    i.putExtra("wheree", "other");
-                    ff=0;
-                    startActivity(i);
-                }
+        } else {
+            SharedPreferences sharedPref = getSharedPreferences(PREF_NAME, PRIVATE_MODE);
+            final String stringObject = sharedPref.getString("applockstatus", "");
+            if (stringObject.equalsIgnoreCase("enable")) {
+                Intent i = new Intent(HomeActivityWithDrawer.this, ApplockActivity.class);
+                i.putExtra("wheree", "other");
+                ff = 0;
+                startActivity(i);
+            }
 
 
         }
 
-        }
-
+    }
 
 
 }

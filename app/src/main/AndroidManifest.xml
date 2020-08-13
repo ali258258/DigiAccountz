@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.digiaccounts.digiaccountz">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -13,12 +14,26 @@
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        tools:replace="android:allowBackup"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Activities.reminders.UpcomingActivityNotification"></activity>
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup">
+        <activity android:name=".Report_All.Activities.CustomerWiseReport"
+            android:noHistory="true"
+            ></activity>
+
+        <activity android:name=".Report_All.Activities.FullBusinessReport"
+            android:noHistory="true"
+            ></activity>
+        <activity android:name=".Report_All.Activities.View_Report"
+            android:noHistory="true"
+            ></activity>
+        <activity android:name=".Activities.reminders.UpcomingActivityNotification" />
         <activity android:name=".Activities.PdfViewActivity" />
+        <activity android:name=".Report_All.Activities.ViewPdf"
+            android:noHistory="true"
+            >
+        </activity>
         <activity android:name=".Activities.ApplockActivity" />
         <activity android:name=".Activities.busineses.BusinessTransactions" />
         <activity android:name=".Activities.customers.CustomerUpdateActivity" />
@@ -58,13 +73,11 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-
         <receiver android:name=".Activities.reminders.RemiderBroadcastForDelete">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -73,10 +86,8 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/file_paths" />
         </provider>
-
-
     </application>
 
 </manifest>

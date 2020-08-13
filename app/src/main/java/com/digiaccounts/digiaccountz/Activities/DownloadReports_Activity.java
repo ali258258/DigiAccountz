@@ -61,11 +61,11 @@ public class DownloadReports_Activity extends AppCompatActivity {
 
         mypdfdocument.finishPage(mypage);
 
-        File f = new File(Environment.getExternalStorageDirectory().getPath(),"DigiPDF");
+        File f = new File(Environment.getExternalStorageDirectory().getPath(),"Cashify");
         if (f.exists()){ }
         else {f.mkdir();}
         String saving = buinessname.replaceAll(" ","_");
-        File myfile = new File(Environment.getExternalStorageDirectory().getPath()+"/DigiPDF",saving+".pdf");
+        File myfile = new File(Environment.getExternalStorageDirectory().getPath()+"/Cashify",saving+".pdf");
         try {
             myfile.createNewFile();
             mypdfdocument.writeTo(new FileOutputStream(myfile));

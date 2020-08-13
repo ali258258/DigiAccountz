@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/mainlayout2"
+    android:layout_height="match_parent"
+    tools:context=".Report_All.Activities.FullBusinessReport">
+
+
+
+
+    <ImageView
+        android:id="@+id/logo"
+        style="@style/report_logo"
+        android:layout_marginTop="@dimen/_5sdp"
+        />
+
+
+    <TextView
+        style="@style/report_title"
+        android:text="@string/app_name"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_toEndOf="@id/logo"
+        android:layout_toRightOf="@+id/logo"
+        />
+
+
+    <TextView
+        style="@style/report_heading"
+        android:id="@+id/tv_business_name_fb"
+        android:layout_marginTop="@dimen/_8sdp"
+        />
+
+    <TextView
+        style="@style/report_heading"
+        android:id="@+id/tv_report_date_fb"
+        android:layout_below="@+id/tv_business_name_fb"
+        />
+
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/black"
+        android:id="@+id/bottom_line"
+        android:layout_below="@+id/tv_report_date_fb"
+
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        />
+
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="10"
+        android:id="@+id/total_sent_layout"
+        android:orientation="horizontal"
+        android:layout_below="@id/bottom_line"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text="@string/total_sent"
+            android:maxLines="2"
+            android:layout_gravity="center_vertical"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:textColor="@color/black"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:text="Loading... "
+            android:textColor="@color/colorPrimary"
+            android:maxLines="2"
+            android:id="@+id/tv_total_sent_fb"
+            android:layout_gravity="center_vertical"
+            android:ellipsize="end"
+            android:textSize="@dimen/_8ssp"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="10"
+        android:id="@+id/total_recived_layout"
+        android:orientation="horizontal"
+        android:layout_below="@id/total_sent_layout"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text="@string/total_recieved"
+            android:maxLines="2"
+            android:layout_gravity="center_vertical"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:textColor="@color/black"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:text="Loading... "
+            android:textColor="@color/colorPrimaryDark"
+            android:maxLines="2"
+            android:id="@+id/tv_total_recived_fb"
+            android:layout_gravity="center_vertical"
+            android:ellipsize="end"
+            android:textSize="@dimen/_8ssp"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="10"
+        android:id="@+id/customer_balance_layout"
+        android:orientation="horizontal"
+        android:layout_below="@id/total_recived_layout"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text="@string/net_balance"
+            android:maxLines="2"
+            android:id="@+id/tv_net_balance_text"
+            android:layout_gravity="center_vertical"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:textColor="@color/black"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:text="Loading... "
+            android:textColor="@color/report_value_color"
+            android:maxLines="2"
+            android:id="@+id/tv_net_balance_fb"
+            android:layout_gravity="center_vertical"
+            android:ellipsize="end"
+            android:textSize="@dimen/_8ssp"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+    <TextView
+        style="@style/report_title"
+        android:text="Transactions : "
+        android:layout_marginTop="@dimen/_1sdp"
+        android:textSize="@dimen/_12ssp"
+        android:id="@+id/trasaction_text"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_below="@+id/customer_balance_layout"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="5"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp"
+        android:id="@+id/lllo"
+        android:background="@color/grey"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_below="@+id/trasaction_text"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ID"
+            android:id="@+id/tv_my_id"
+            android:maxLines="2"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            />
+
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Type"
+            android:textColor="@color/black"
+            android:maxLines="2"
+            android:id="@+id/tv_my_transaction_type"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+
+            android:textSize="@dimen/_8ssp"
+            />
+
+
+
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Amount"
+            android:id="@+id/tv_my_transaction_amount"
+            android:maxLines="2"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="Description "
+            android:textColor="@color/black"
+            android:maxLines="2"
+            android:id="@+id/tv_my_transaction_description"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:textSize="@dimen/_8ssp"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lllo"
+        android:id="@+id/recyclerview_fb"
+        android:layout_marginTop="@dimen/_5sdp"
+        ></androidx.recyclerview.widget.RecyclerView>
+
+
+
+
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="@dimen/_20sdp"
+        >
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/back_to_menu"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:textColor="@color/white"
+            android:id="@+id/back_to_menu1"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/btnbk2"
+            />
+
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="@color/white"
+            android:id="@+id/download_btn"
+            android:text="@string/download"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/btnbk2"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
